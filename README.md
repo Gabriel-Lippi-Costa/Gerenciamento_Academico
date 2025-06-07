@@ -8,7 +8,7 @@ Trata-se de um projeto pessoal, desenvolvido em Java, com interface gráfica e b
 
 Programação Orientada a Objetos (POO)
 
-Modelagem Orientada a Objetos
+Modelagem Orientada a Objetos (MOO)
 
 Integração e utilização do banco de dados (MySQL)
 
