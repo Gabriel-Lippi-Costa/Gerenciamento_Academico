@@ -1,4 +1,4 @@
-package com.mycompany.persistencias;
+package com.mycompany.codigodoprojeto.persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ public class ConnectionFactory {
   private static String user = "root";
   private static String password = "dbPessoal123";
 
-  public static Connection obterConexao() {
+  public static Connection obterConexap() {
     try {
       var c = DriverManager.getConnection(
               "jdbc:mysql://" + host + ":" + porta + "/"
@@ -24,5 +24,4 @@ public class ConnectionFactory {
       return null;
     }
   }
-
 }
