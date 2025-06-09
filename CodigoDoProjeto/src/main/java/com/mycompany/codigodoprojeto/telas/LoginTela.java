@@ -4,7 +4,7 @@
  */
 package com.mycompany.codigodoprojeto.telas;
 
-import com.mycompany.codigodoprojeto.modelos.Usuario;
+import com.mycompany.codigodoprojeto.modelos.UsuarioLogin;
 import com.mycompany.codigodoprojeto.persistencia.DAO;
 import javax.swing.JOptionPane;
 
@@ -34,29 +34,28 @@ public class LoginTela extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jPanel1 = new javax.swing.JPanel();
-    jPanel2 = new javax.swing.JPanel();
+    grandePanel = new javax.swing.JPanel();
+    esquerdaPanel = new javax.swing.JPanel();
     jLabel6 = new javax.swing.JLabel();
     jLabel7 = new javax.swing.JLabel();
     jLabel9 = new javax.swing.JLabel();
-    jLabel1 = new javax.swing.JLabel();
-    jLabel2 = new javax.swing.JLabel();
-    jLabel3 = new javax.swing.JLabel();
+    tituloLabel = new javax.swing.JLabel();
+    emailLabel = new javax.swing.JLabel();
+    senhaLabel = new javax.swing.JLabel();
     emailTextField = new javax.swing.JTextField();
     senhaPasswordField = new javax.swing.JPasswordField();
-    jLabel4 = new javax.swing.JLabel();
-    jLabel5 = new javax.swing.JLabel();
+    criarContaLabel = new javax.swing.JLabel();
+    esqueciSenhaLabel = new javax.swing.JLabel();
     entrarButton = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-    setPreferredSize(new java.awt.Dimension(800, 500));
 
-    jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-    jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
-    jPanel1.setLayout(null);
+    grandePanel.setBackground(new java.awt.Color(255, 255, 255));
+    grandePanel.setPreferredSize(new java.awt.Dimension(800, 500));
+    grandePanel.setLayout(null);
 
-    jPanel2.setBackground(new java.awt.Color(41, 41, 41));
-    jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
+    esquerdaPanel.setBackground(new java.awt.Color(41, 41, 41));
+    esquerdaPanel.setPreferredSize(new java.awt.Dimension(400, 500));
 
     jLabel6.setFont(new java.awt.Font("Arial", 0, 19)); // NOI18N
     jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,26 +67,26 @@ public class LoginTela extends javax.swing.JFrame {
 
     jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\logo.png")); // NOI18N
 
-    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-    jPanel2.setLayout(jPanel2Layout);
-    jPanel2Layout.setHorizontalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel2Layout.createSequentialGroup()
+    javax.swing.GroupLayout esquerdaPanelLayout = new javax.swing.GroupLayout(esquerdaPanel);
+    esquerdaPanel.setLayout(esquerdaPanelLayout);
+    esquerdaPanelLayout.setHorizontalGroup(
+      esquerdaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(esquerdaPanelLayout.createSequentialGroup()
+        .addGroup(esquerdaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(97, 97, 97)
             .addComponent(jLabel7))
-          .addGroup(jPanel2Layout.createSequentialGroup()
+          .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(34, 34, 34)
             .addComponent(jLabel6))
-          .addGroup(jPanel2Layout.createSequentialGroup()
+          .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(150, 150, 150)
             .addComponent(jLabel9)))
         .addContainerGap(36, Short.MAX_VALUE))
     );
-    jPanel2Layout.setVerticalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+    esquerdaPanelLayout.setVerticalGroup(
+      esquerdaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, esquerdaPanelLayout.createSequentialGroup()
         .addContainerGap(149, Short.MAX_VALUE)
         .addComponent(jLabel9)
         .addGap(18, 18, 18)
@@ -97,52 +96,57 @@ public class LoginTela extends javax.swing.JFrame {
         .addGap(59, 59, 59))
     );
 
-    jPanel1.add(jPanel2);
-    jPanel2.setBounds(0, 0, 400, 500);
+    grandePanel.add(esquerdaPanel);
+    esquerdaPanel.setBounds(0, 0, 400, 500);
 
-    jLabel1.setFont(new java.awt.Font("Arial", 1, 39)); // NOI18N
-    jLabel1.setText("Seja bem-vindo(a)");
-    jPanel1.add(jLabel1);
-    jLabel1.setBounds(430, 20, 340, 40);
+    tituloLabel.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
+    tituloLabel.setText("Seja bem-vindo(a)");
+    grandePanel.add(tituloLabel);
+    tituloLabel.setBounds(450, 20, 340, 40);
 
-    jLabel2.setFont(new java.awt.Font("Arial", 1, 25)); // NOI18N
-    jLabel2.setText("E-mail");
-    jPanel1.add(jLabel2);
-    jLabel2.setBounds(440, 100, 85, 30);
+    emailLabel.setFont(new java.awt.Font("Arial", 1, 25)); // NOI18N
+    emailLabel.setText("E-mail");
+    grandePanel.add(emailLabel);
+    emailLabel.setBounds(440, 100, 85, 30);
 
-    jLabel3.setFont(new java.awt.Font("Arial", 1, 25)); // NOI18N
-    jLabel3.setText("Senha");
-    jPanel1.add(jLabel3);
-    jLabel3.setBounds(440, 210, 75, 30);
-    jPanel1.add(emailTextField);
+    senhaLabel.setFont(new java.awt.Font("Arial", 1, 25)); // NOI18N
+    senhaLabel.setText("Senha");
+    grandePanel.add(senhaLabel);
+    senhaLabel.setBounds(440, 210, 75, 30);
+
+    emailTextField.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    emailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+    grandePanel.add(emailTextField);
     emailTextField.setBounds(440, 130, 320, 40);
 
-    senhaPasswordField.setPreferredSize(new java.awt.Dimension(64, 22));
-    jPanel1.add(senhaPasswordField);
+    senhaPasswordField.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    senhaPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+    grandePanel.add(senhaPasswordField);
     senhaPasswordField.setBounds(440, 240, 320, 40);
 
-    jLabel4.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
-    jLabel4.setText("Criar uma conta");
-    jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    jPanel1.add(jLabel4);
-    jLabel4.setBounds(440, 290, 130, 21);
+    criarContaLabel.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+    criarContaLabel.setText("Criar uma conta");
+    criarContaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    grandePanel.add(criarContaLabel);
+    criarContaLabel.setBounds(440, 290, 130, 21);
 
-    jLabel5.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
-    jLabel5.setText("Esqueci a senha");
-    jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    jPanel1.add(jLabel5);
-    jLabel5.setBounds(630, 290, 140, 16);
+    esqueciSenhaLabel.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+    esqueciSenhaLabel.setText("Esqueci a senha");
+    esqueciSenhaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    grandePanel.add(esqueciSenhaLabel);
+    esqueciSenhaLabel.setBounds(630, 290, 140, 20);
 
     entrarButton.setBackground(new java.awt.Color(41, 41, 41));
     entrarButton.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
     entrarButton.setForeground(new java.awt.Color(255, 255, 255));
-    entrarButton.setText("Entrar");
+    entrarButton.setText("ENTRAR");
+    entrarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     entrarButton.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         entrarButtonActionPerformed(evt);
       }
     });
-    jPanel1.add(entrarButton);
+    grandePanel.add(entrarButton);
     entrarButton.setBounds(530, 400, 120, 50);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,13 +154,13 @@ public class LoginTela extends javax.swing.JFrame {
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(grandePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(0, 0, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(grandePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(0, 0, Short.MAX_VALUE))
     );
 
@@ -170,7 +174,7 @@ public class LoginTela extends javax.swing.JFrame {
     String senha = new String(senhaPasswordField.getPassword());
     
     try {
-      Usuario usuario = new Usuario(email, senha);
+      UsuarioLogin usuario = new UsuarioLogin(email, senha);
       DAO dao = new DAO();
       
       if (dao.existeUsuario(usuario)) {
@@ -210,18 +214,18 @@ public class LoginTela extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JLabel criarContaLabel;
+  private javax.swing.JLabel emailLabel;
   private javax.swing.JTextField emailTextField;
   private javax.swing.JButton entrarButton;
-  private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel2;
-  private javax.swing.JLabel jLabel3;
-  private javax.swing.JLabel jLabel4;
-  private javax.swing.JLabel jLabel5;
+  private javax.swing.JLabel esqueciSenhaLabel;
+  private javax.swing.JPanel esquerdaPanel;
+  private javax.swing.JPanel grandePanel;
   private javax.swing.JLabel jLabel6;
   private javax.swing.JLabel jLabel7;
   private javax.swing.JLabel jLabel9;
-  private javax.swing.JPanel jPanel1;
-  private javax.swing.JPanel jPanel2;
+  private javax.swing.JLabel senhaLabel;
   private javax.swing.JPasswordField senhaPasswordField;
+  private javax.swing.JLabel tituloLabel;
   // End of variables declaration//GEN-END:variables
 }

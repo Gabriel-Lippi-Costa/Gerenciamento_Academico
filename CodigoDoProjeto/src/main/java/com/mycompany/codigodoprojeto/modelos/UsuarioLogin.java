@@ -1,10 +1,10 @@
 package com.mycompany.codigodoprojeto.modelos;
 
-public class Usuario {
+public class UsuarioLogin {
   private String email;
   private String senha;
 
-  public Usuario(String email, String senha) {
+  public UsuarioLogin(String email, String senha) {
     this.email = email;
     this.senha = senha;
   }
