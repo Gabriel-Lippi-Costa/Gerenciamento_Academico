@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class DAO {
   public boolean existeUsuario(Usuario usuario) throws Exception{
-    String sql = "SELECT * FROM " + "tb_usuario WHERE " + "login = ? AND senha = ?";
+    String sql = "SELECT * FROM " + "tb_usuario WHERE " + "emailUsuario = ? AND senhaUsuario = ?";
     
     try(Connection conn = ConnectionFactory.obterConexao(); 
         PreparedStatement ps = conn.prepareStatement(sql)
