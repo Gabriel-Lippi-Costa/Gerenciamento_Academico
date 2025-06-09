@@ -11,7 +11,7 @@ public class ConnectionFactory {
   private static String user = "root";
   private static String password = "dbPessoal123";
 
-  public static Connection obterConexap() {
+  public static Connection obterConexao() {
     try {
       var c = DriverManager.getConnection(
               "jdbc:mysql://" + host + ":" + porta + "/"

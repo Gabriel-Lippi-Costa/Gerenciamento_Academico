@@ -4,6 +4,10 @@
  */
 package com.mycompany.codigodoprojeto.telas;
 
+import com.mycompany.codigodoprojeto.modelos.Usuario;
+import com.mycompany.codigodoprojeto.persistencia.DAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
@@ -16,7 +20,9 @@ public class LoginTela extends javax.swing.JFrame {
    * Creates new form LoginTela
    */
   public LoginTela() {
+    super("Gerenciamento Acadêmico");
     initComponents();
+    setLocationRelativeTo(null);
   }
 
   /**
@@ -36,11 +42,11 @@ public class LoginTela extends javax.swing.JFrame {
     jLabel1 = new javax.swing.JLabel();
     jLabel2 = new javax.swing.JLabel();
     jLabel3 = new javax.swing.JLabel();
-    jTextField1 = new javax.swing.JTextField();
-    jPasswordField1 = new javax.swing.JPasswordField();
+    emailTextField = new javax.swing.JTextField();
+    senhaPasswordField = new javax.swing.JPasswordField();
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
-    jButton1 = new javax.swing.JButton();
+    entrarButton = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setPreferredSize(new java.awt.Dimension(800, 500));
@@ -108,12 +114,12 @@ public class LoginTela extends javax.swing.JFrame {
     jLabel3.setText("Senha");
     jPanel1.add(jLabel3);
     jLabel3.setBounds(440, 210, 75, 30);
-    jPanel1.add(jTextField1);
-    jTextField1.setBounds(440, 130, 320, 40);
+    jPanel1.add(emailTextField);
+    emailTextField.setBounds(440, 130, 320, 40);
 
-    jPasswordField1.setPreferredSize(new java.awt.Dimension(64, 22));
-    jPanel1.add(jPasswordField1);
-    jPasswordField1.setBounds(440, 240, 320, 40);
+    senhaPasswordField.setPreferredSize(new java.awt.Dimension(64, 22));
+    jPanel1.add(senhaPasswordField);
+    senhaPasswordField.setBounds(440, 240, 320, 40);
 
     jLabel4.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
     jLabel4.setText("Criar uma conta");
@@ -127,12 +133,17 @@ public class LoginTela extends javax.swing.JFrame {
     jPanel1.add(jLabel5);
     jLabel5.setBounds(630, 290, 140, 16);
 
-    jButton1.setBackground(new java.awt.Color(41, 41, 41));
-    jButton1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-    jButton1.setForeground(new java.awt.Color(255, 255, 255));
-    jButton1.setText("Entrar");
-    jPanel1.add(jButton1);
-    jButton1.setBounds(530, 400, 120, 50);
+    entrarButton.setBackground(new java.awt.Color(41, 41, 41));
+    entrarButton.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+    entrarButton.setForeground(new java.awt.Color(255, 255, 255));
+    entrarButton.setText("Entrar");
+    entrarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        entrarButtonActionPerformed(evt);
+      }
+    });
+    jPanel1.add(entrarButton);
+    entrarButton.setBounds(530, 400, 120, 50);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -151,6 +162,27 @@ public class LoginTela extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
+    // TODO add your handling code here:
+    
+    String email = emailTextField.getText();
+    String senha = new String(senhaPasswordField.getPassword());
+    
+    try {
+      Usuario usuario = new Usuario(email, senha);
+      DAO dao = new DAO();
+      
+      if (dao.existeUsuario(usuario)) {
+        JOptionPane.showMessageDialog(null, "Login efetuado com sucesso!");
+      } else {
+        JOptionPane.showMessageDialog(null, "Usuário/senha inválido!");
+      }
+      
+    } catch(Exception e) {
+      JOptionPane.showMessageDialog(null, "Tente novamente mais tarde!");
+    }
+  }//GEN-LAST:event_entrarButtonActionPerformed
 
   /**
    * @param args the command line arguments
@@ -178,7 +210,8 @@ public class LoginTela extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
+  private javax.swing.JTextField emailTextField;
+  private javax.swing.JButton entrarButton;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -189,7 +222,6 @@ public class LoginTela extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel9;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
-  private javax.swing.JPasswordField jPasswordField1;
-  private javax.swing.JTextField jTextField1;
+  private javax.swing.JPasswordField senhaPasswordField;
   // End of variables declaration//GEN-END:variables
 }
