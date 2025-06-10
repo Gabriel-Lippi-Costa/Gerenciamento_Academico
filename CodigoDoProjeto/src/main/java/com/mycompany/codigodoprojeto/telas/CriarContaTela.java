@@ -133,7 +133,6 @@ public class CriarContaTela extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void criarContaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarContaButtonActionPerformed
-   
     String email = emailTextField.getText();
     String senha = senhaTextField.getText();
     String nomeCompleto = nomeCompletoTextField.getText();
@@ -147,6 +146,8 @@ public class CriarContaTela extends javax.swing.JFrame {
       
       if (sucesso) {
         JOptionPane.showMessageDialog(null, "Conta criada com sucesso!");
+        new LoginTela().setVisible(true);
+        this.dispose();
       } else {
         JOptionPane.showMessageDialog(null, "Não foi possível criar a conta!");
       }
@@ -157,7 +158,6 @@ public class CriarContaTela extends javax.swing.JFrame {
   }//GEN-LAST:event_criarContaButtonActionPerformed
 
   private void jaTenhoContaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jaTenhoContaLabelMouseClicked
-
     new LoginTela().setVisible(true);
     this.dispose();
   }//GEN-LAST:event_jaTenhoContaLabelMouseClicked

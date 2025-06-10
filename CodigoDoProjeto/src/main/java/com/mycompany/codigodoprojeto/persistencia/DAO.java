@@ -1,6 +1,7 @@
 package com.mycompany.codigodoprojeto.persistencia;
 
 import com.mycompany.codigodoprojeto.modelos.UsuarioCriarConta;
+import com.mycompany.codigodoprojeto.modelos.UsuarioEsqueceuSenha;
 import com.mycompany.codigodoprojeto.modelos.UsuarioLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,18 @@ public class DAO {
       ps.setString(4, usuarioCriarConta.getEmail());
       ps.setString(5, usuarioCriarConta.getSenha());
 
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    }
+  }
+  
+  public boolean mudarSenhaUsuario(UsuarioEsqueceuSenha usuarioEsqueceuSenha) throws Exception {
+    String sql = "UPDATE tb_usuario SET senhaUsuario = ? WHERE emailUsuario = ?";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setString(1, usuarioEsqueceuSenha.getNovaSenha());
+      ps.setString(2, usuarioEsqueceuSenha.getEmail());
+      
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
     }

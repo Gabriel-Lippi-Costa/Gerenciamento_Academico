@@ -122,6 +122,11 @@ public class LoginTela extends javax.swing.JFrame {
     esqueciSenhaLabel.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
     esqueciSenhaLabel.setText("Esqueci a senha");
     esqueciSenhaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    esqueciSenhaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        esqueciSenhaLabelMouseClicked(evt);
+      }
+    });
     grandePanel.add(esqueciSenhaLabel);
     esqueciSenhaLabel.setBounds(630, 290, 140, 20);
 
@@ -136,7 +141,7 @@ public class LoginTela extends javax.swing.JFrame {
       }
     });
     grandePanel.add(entrarButton);
-    entrarButton.setBounds(530, 400, 120, 50);
+    entrarButton.setBounds(530, 400, 140, 50);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -157,7 +162,6 @@ public class LoginTela extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
-
     String email = emailTextField.getText();
     String senha = new String(senhaPasswordField.getPassword());
     
@@ -177,10 +181,14 @@ public class LoginTela extends javax.swing.JFrame {
   }//GEN-LAST:event_entrarButtonActionPerformed
 
   private void criarContaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_criarContaLabelMouseClicked
-
     new CriarContaTela().setVisible(true);
     this.dispose();
   }//GEN-LAST:event_criarContaLabelMouseClicked
+
+  private void esqueciSenhaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esqueciSenhaLabelMouseClicked
+    new EsqueceuSenhaTela().setVisible(true);
+    this.dispose();
+  }//GEN-LAST:event_esqueciSenhaLabelMouseClicked
 
   public static void main(String args[]) {
     java.awt.EventQueue.invokeLater(() -> new LoginTela().setVisible(true));
