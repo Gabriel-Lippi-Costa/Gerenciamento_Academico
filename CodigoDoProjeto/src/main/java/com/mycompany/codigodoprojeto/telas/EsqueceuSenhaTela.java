@@ -29,7 +29,7 @@ public class EsqueceuSenhaTela extends javax.swing.JFrame {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setPreferredSize(new java.awt.Dimension(800, 500));
-    getContentPane().setLayout(new java.awt.GridLayout());
+    getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
     jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 

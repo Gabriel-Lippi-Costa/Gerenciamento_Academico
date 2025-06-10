@@ -170,7 +170,8 @@ public class LoginTela extends javax.swing.JFrame {
       DAO dao = new DAO();
       
       if (dao.existeUsuario(usuario)) {
-        JOptionPane.showMessageDialog(null, "Login efetuado com sucesso!");
+        new EscolherGerenciamento().setVisible(true);
+        this.dispose();
       } else {
         JOptionPane.showMessageDialog(null, "Usuário/senha inválido!");
       }
