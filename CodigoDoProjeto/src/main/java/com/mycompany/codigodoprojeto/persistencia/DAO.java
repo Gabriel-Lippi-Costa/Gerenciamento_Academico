@@ -1,5 +1,6 @@
 package com.mycompany.codigodoprojeto.persistencia;
 
+import com.mycompany.codigodoprojeto.modelos.Aluno;
 import com.mycompany.codigodoprojeto.modelos.UsuarioCriarConta;
 import com.mycompany.codigodoprojeto.modelos.UsuarioEsqueceuSenha;
 import com.mycompany.codigodoprojeto.modelos.UsuarioLogin;
@@ -48,6 +49,27 @@ public class DAO {
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
     }
+  }
+  
+  public boolean criarAluno(Aluno aluno) throws Exception {
+    String sql = "INSERT INTO tb_aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?) ";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setInt(1, aluno.getCodigo());
+      ps.setString(2, aluno.getNome());
+      ps.setString(3, aluno.getCurso());
+      ps.setString(4, aluno.getInicio());
+      ps.setString(5, aluno.getFim());
+      ps.setString(6, aluno.getEmail());
+      ps.setString(7, aluno.getSenha());
+      ps.setString(8, aluno.getSala());
+      ps.setString(9, aluno.getCpf());
+      
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+      
+    }
+    
   }
 
 }
