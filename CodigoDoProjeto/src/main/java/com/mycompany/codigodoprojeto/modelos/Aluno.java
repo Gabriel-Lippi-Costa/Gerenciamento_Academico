@@ -1,7 +1,5 @@
 package com.mycompany.codigodoprojeto.modelos;
 
-import java.time.LocalDate;
-
 public class Aluno {
   
   private String nome;
