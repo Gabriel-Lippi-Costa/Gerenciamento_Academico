@@ -1,6 +1,9 @@
 package com.mycompany.codigodoprojeto.telas;
 
+import com.mycompany.codigodoprojeto.modelos.Aluno;
+import com.mycompany.codigodoprojeto.persistencia.DAO;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class GerenciamentoAlunos extends javax.swing.JFrame {
   
@@ -17,7 +20,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
-    VoltarButton = new javax.swing.JButton();
+    voltarButton = new javax.swing.JButton();
     AdicionarButton = new javax.swing.JButton();
     RemoverButton = new javax.swing.JButton();
     AtualizarButton = new javax.swing.JButton();
@@ -46,13 +49,13 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-    VoltarButton.setBackground(new java.awt.Color(255, 0, 0));
-    VoltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
-    VoltarButton.setForeground(new java.awt.Color(255, 255, 255));
-    VoltarButton.setText("VOLTAR");
-    VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+    voltarButton.setBackground(new java.awt.Color(255, 0, 0));
+    voltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+    voltarButton.setForeground(new java.awt.Color(255, 255, 255));
+    voltarButton.setText("VOLTAR");
+    voltarButton.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        VoltarButtonActionPerformed(evt);
+        voltarButtonActionPerformed(evt);
       }
     });
 
@@ -119,7 +122,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(32, 32, 32)
@@ -181,7 +184,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(24, 24, 24)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(CodigoLabel)
@@ -230,23 +233,58 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+  private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
 
     
     new EscolherGerenciamento().setVisible(true);
     this.dispose();
     
-  }//GEN-LAST:event_VoltarButtonActionPerformed
+  }//GEN-LAST:event_voltarButtonActionPerformed
 
   private void AdicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarButtonActionPerformed
     // TODO add your handling code here:
     
+    try {
+      
     int codigo = Integer.parseInt(CodigoTextField.getText());
     String nome = NomeTextField.getText();
     String curso = CursoTextField.getText();
     String inicio = InicioTextField.getText();
     String fim = FimTextField.getText();
     String email = EmailTextField.getText();
+    String senha = SenhaTextField.getText();
+    String sala = SalaTextField.getText();
+    String cpf = CpfTextField.getText();
+    
+    Aluno aluno = new Aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf);
+    DAO dao = new DAO();
+    
+    if (dao.criarAluno(aluno)) {
+      JOptionPane.showMessageDialog(null, "Aluno criado com sucesso!");
+      
+      DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+      
+      
+      model.addRow(new Object[] {
+        
+      aluno.getCodigo(),
+      aluno.getNome(),
+      aluno.getCurso(),
+      aluno.getInicio(),
+      aluno.getFim(),
+      aluno.getEmail(),
+      aluno.getSenha(),
+      aluno.getSala(),
+      aluno.getCpf()
+        
+      });
+    } else {
+      JOptionPane.showMessageDialog(null, "Erro ao criar aluno!");
+    }
+    
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(null, "Erro!" + e.getMessage());
+    }
     
   }//GEN-LAST:event_AdicionarButtonActionPerformed
 
@@ -288,8 +326,8 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   private javax.swing.JTextField SalaTextField;
   private javax.swing.JLabel SenhaLabel;
   private javax.swing.JTextField SenhaTextField;
-  private javax.swing.JButton VoltarButton;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane2;
+  private javax.swing.JButton voltarButton;
   // End of variables declaration//GEN-END:variables
 }
