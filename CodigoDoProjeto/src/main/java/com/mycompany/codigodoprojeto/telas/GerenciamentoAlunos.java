@@ -50,6 +50,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     VoltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
     VoltarButton.setForeground(new java.awt.Color(255, 255, 255));
     VoltarButton.setText("VOLTAR");
+    VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        VoltarButtonActionPerformed(evt);
+      }
+    });
 
     AdicionarButton.setBackground(new java.awt.Color(0, 0, 0));
     AdicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -86,10 +91,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     AlunosTable.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null}
+
       },
       new String [] {
         "CODIGO", "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
@@ -222,6 +224,14 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+
+    
+    new EscolherGerenciamento().setVisible(true);
+    this.dispose();
+    
+  }//GEN-LAST:event_VoltarButtonActionPerformed
 
   public static void main(String args[]) {
     
