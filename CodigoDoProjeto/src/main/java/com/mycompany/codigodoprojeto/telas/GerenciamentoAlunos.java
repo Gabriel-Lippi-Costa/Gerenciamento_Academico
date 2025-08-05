@@ -60,6 +60,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     AdicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     AdicionarButton.setForeground(new java.awt.Color(255, 255, 255));
     AdicionarButton.setText("ADICIONAR");
+    AdicionarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AdicionarButtonActionPerformed(evt);
+      }
+    });
 
     RemoverButton.setBackground(new java.awt.Color(0, 0, 0));
     RemoverButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -232,6 +237,18 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     this.dispose();
     
   }//GEN-LAST:event_VoltarButtonActionPerformed
+
+  private void AdicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarButtonActionPerformed
+    // TODO add your handling code here:
+    
+    int codigo = Integer.parseInt(CodigoTextField.getText());
+    String nome = NomeTextField.getText();
+    String curso = CursoTextField.getText();
+    String inicio = InicioTextField.getText();
+    String fim = FimTextField.getText();
+    String email = EmailTextField.getText();
+    
+  }//GEN-LAST:event_AdicionarButtonActionPerformed
 
   public static void main(String args[]) {
     

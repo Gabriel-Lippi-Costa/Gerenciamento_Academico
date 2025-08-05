@@ -15,7 +15,7 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
   private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
-    jLabel2 = new javax.swing.JLabel();
+    AlunoButton = new javax.swing.JLabel();
     jButton1 = new javax.swing.JButton();
     jButton2 = new javax.swing.JButton();
     jButton3 = new javax.swing.JButton();
@@ -25,8 +25,8 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
 
     jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-    jLabel2.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
-    jLabel2.setText("O que você deseja fazer?");
+    AlunoButton.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
+    AlunoButton.setText("O que você deseja fazer?");
 
     jButton1.setBackground(new java.awt.Color(255, 0, 0));
     jButton1.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
@@ -56,7 +56,7 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(199, 199, 199)
-            .addComponent(jLabel2))
+            .addComponent(AlunoButton))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(271, 271, 271)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +69,7 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(22, 22, 22)
-        .addComponent(jLabel2)
+        .addComponent(AlunoButton)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
@@ -105,10 +105,10 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JLabel AlunoButton;
   private javax.swing.JButton jButton1;
   private javax.swing.JButton jButton2;
   private javax.swing.JButton jButton3;
-  private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   // End of variables declaration//GEN-END:variables
 }
