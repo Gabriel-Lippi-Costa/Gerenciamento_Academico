@@ -24,13 +24,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     AdicionarButton = new javax.swing.JButton();
     RemoverButton = new javax.swing.JButton();
     AtualizarButton = new javax.swing.JButton();
-    CodigoLabel = new javax.swing.JLabel();
     NomeLabel = new javax.swing.JLabel();
     CursoLabel = new javax.swing.JLabel();
     FimLabel = new javax.swing.JLabel();
     InicioLabel = new javax.swing.JLabel();
     SenhaLabel = new javax.swing.JLabel();
-    CodigoTextField = new javax.swing.JTextField();
     NomeTextField = new javax.swing.JTextField();
     CursoTextField = new javax.swing.JTextField();
     FimTextField = new javax.swing.JTextField();
@@ -78,9 +76,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     AtualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     AtualizarButton.setForeground(new java.awt.Color(255, 255, 255));
     AtualizarButton.setText("ATUALIZAR");
-
-    CodigoLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    CodigoLabel.setText("CODIGO");
 
     NomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     NomeLabel.setText("NOME");
@@ -142,16 +137,10 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(CodigoLabel)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(CodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(FimLabel)
-                    .addGap(18, 18, 18)
-                    .addComponent(InicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(FimLabel)
                 .addGap(18, 18, 18)
+                .addComponent(InicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
                     .addComponent(NomeLabel)
@@ -187,8 +176,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(24, 24, 24)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(CodigoLabel)
-          .addComponent(CodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(NomeLabel)
           .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(CursoLabel)
@@ -246,7 +233,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     
     try {
       
-    int codigo = Integer.parseInt(CodigoTextField.getText());
     String nome = NomeTextField.getText();
     String curso = CursoTextField.getText();
     String inicio = InicioTextField.getText();
@@ -256,7 +242,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     String sala = SalaTextField.getText();
     String cpf = CpfTextField.getText();
     
-    Aluno aluno = new Aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf);
+    Aluno aluno = new Aluno(nome, curso, inicio, fim, email, senha, sala, cpf);
     DAO dao = new DAO();
     
     if (dao.criarAluno(aluno)) {
@@ -267,7 +253,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       
       model.addRow(new Object[] {
         
-      aluno.getCodigo(),
       aluno.getNome(),
       aluno.getCurso(),
       aluno.getInicio(),
@@ -307,8 +292,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   private javax.swing.JButton AdicionarButton;
   private javax.swing.JTable AlunosTable;
   private javax.swing.JButton AtualizarButton;
-  private javax.swing.JLabel CodigoLabel;
-  private javax.swing.JTextField CodigoTextField;
   private javax.swing.JLabel CpfLabel;
   private javax.swing.JTextField CpfTextField;
   private javax.swing.JLabel CursoLabel;

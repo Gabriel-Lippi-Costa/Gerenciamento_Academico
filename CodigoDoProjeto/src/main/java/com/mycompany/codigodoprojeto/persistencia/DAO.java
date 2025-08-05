@@ -52,18 +52,17 @@ public class DAO {
   }
   
   public boolean criarAluno(Aluno aluno) throws Exception {
-    String sql = "INSERT INTO tb_aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?) ";
+    String sql = "INSERT INTO tb_aluno(nomeAluno, cursoAluno, inicioCursoAluno, fimCursoAluno, emailAluno, senhaAluno, salaAluno, cpfAluno) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
     
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setInt(1, aluno.getCodigo());
-      ps.setString(2, aluno.getNome());
-      ps.setString(3, aluno.getCurso());
-      ps.setString(4, aluno.getInicio());
-      ps.setString(5, aluno.getFim());
-      ps.setString(6, aluno.getEmail());
-      ps.setString(7, aluno.getSenha());
-      ps.setString(8, aluno.getSala());
-      ps.setString(9, aluno.getCpf());
+      ps.setString(1, aluno.getNome());
+      ps.setString(2, aluno.getCurso());
+      ps.setString(3, aluno.getInicio());
+      ps.setString(4, aluno.getFim());
+      ps.setString(5, aluno.getEmail());
+      ps.setString(6, aluno.getSenha());
+      ps.setString(7, aluno.getSala());
+      ps.setString(8, aluno.getCpf());
       
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;

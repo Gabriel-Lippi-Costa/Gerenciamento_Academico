@@ -1,8 +1,9 @@
 package com.mycompany.codigodoprojeto.modelos;
 
-public class Aluno {
+import java.time.LocalDate;
 
-  private int codigo;
+public class Aluno {
+  
   private String nome;
   private String curso;
   private String inicio;
@@ -12,9 +13,9 @@ public class Aluno {
   private String sala;
   private String cpf;
 
-  public Aluno(int codigo, String nome, String curso, String inicio, String fim,
+  public Aluno(String nome, String curso, String inicio, String fim,
           String email, String senha, String sala, String cpf) {
-    this.codigo = codigo;
+  
     this.nome = nome;
     this.curso = curso;
     this.inicio = inicio;
@@ -39,14 +40,6 @@ public class Aluno {
 
   public void setCpf(String cpf) {
     this.cpf = cpf;
-  }
-
-  public Integer getCodigo() {
-    return codigo;
-  }
-
-  public void setCodigo(Integer codigo) {
-    this.codigo = codigo;
   }
 
   public String getNome() {
