@@ -103,7 +103,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       },
       new String [] {
-        "CODIGO", "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
+        "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
     jScrollPane2.setViewportView(AlunosTable);
@@ -287,14 +287,13 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     }
 
-    String codigoStr = AlunosTable.getValueAt(linhaSelecionada, 0).toString();
-    int codigo = Integer.parseInt(codigoStr);
+    String cpf = AlunosTable.getValueAt(linhaSelecionada, 7).toString();
 
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
 
     if (confirmar == JOptionPane.YES_OPTION) {
       DAO dao = new DAO();
-      if (dao.removerAluno(codigo)) {
+      if (dao.removerAluno(cpf)) {
         DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
         model.removeRow(linhaSelecionada);
         JOptionPane.showMessageDialog(null, "Aluno removido com sucesso!");
