@@ -71,6 +71,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     RemoverButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     RemoverButton.setForeground(new java.awt.Color(255, 255, 255));
     RemoverButton.setText("REMOVER");
+    RemoverButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RemoverButtonActionPerformed(evt);
+      }
+    });
 
     AtualizarButton.setBackground(new java.awt.Color(0, 0, 0));
     AtualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -222,7 +227,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
   private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
 
-    
     new EscolherGerenciamento().setVisible(true);
     this.dispose();
     
@@ -272,6 +276,34 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     }
     
   }//GEN-LAST:event_AdicionarButtonActionPerformed
+
+  private void RemoverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverButtonActionPerformed
+    
+    int linhaSelecionada = AlunosTable.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+      
+      JOptionPane.showMessageDialog(null, "Selecione um aluno para remover!");
+      return;
+      
+    }
+    
+    int codigo = (int) AlunosTable.getValueAt(linhaSelecionada, 0);
+    
+    int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
+    
+    if (confirmar == JOptionPane.YES_OPTION) {
+      DAO dao = new DAO();
+      if(dao.removerAluno(codigo)) {
+        DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+        model.removeRow(linhaSelecionada);
+        JOptionPane.showMessageDialog(null, "Aluno removido com sucesso!");
+      } else {
+        JOptionPane.showMessageDialog(null, "Aluno não removido!");
+      }
+    }   
+    
+  }//GEN-LAST:event_RemoverButtonActionPerformed
 
   public static void main(String args[]) {
     
