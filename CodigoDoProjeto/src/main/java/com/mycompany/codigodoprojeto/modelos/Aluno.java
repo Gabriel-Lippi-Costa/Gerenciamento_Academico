@@ -2,6 +2,7 @@ package com.mycompany.codigodoprojeto.modelos;
 
 public class Aluno {
   
+  private int codigo;
   private String nome;
   private String curso;
   private String inicio;
@@ -14,6 +15,20 @@ public class Aluno {
   public Aluno(String nome, String curso, String inicio, String fim,
           String email, String senha, String sala, String cpf) {
   
+    this.nome = nome;
+    this.curso = curso;
+    this.inicio = inicio;
+    this.fim = fim;
+    this.email = email;
+    this.senha = senha;
+    this.sala = sala;
+    this.cpf = cpf;
+  }
+  
+  public Aluno(int codigo, String nome, String curso, String inicio, String fim,
+          String email, String senha, String sala, String cpf) {
+    
+    this.codigo = codigo;
     this.nome = nome;
     this.curso = curso;
     this.inicio = inicio;

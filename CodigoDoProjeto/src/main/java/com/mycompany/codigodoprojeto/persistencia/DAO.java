@@ -117,6 +117,28 @@ public class DAO {
       }
 
     }
+
+  public boolean atualizarAluno(Aluno aluno) throws Exception {
+    String sql = "UPDATE tb_aluno SET nomeAluno = ?, cursoAluno = ?, inicioCursoAluno = ?, fimCursoAluno = ?, emailAluno = ?, senhaAluno = ?, salaAluno = ?, cpfAluno = ?";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setString(1, aluno.getNome());
+      ps.setString(2, aluno.getCurso());
+      ps.setString(3, aluno.getInicio());
+      ps.setString(4, aluno.getFim());
+      ps.setString(5, aluno.getEmail());
+      ps.setString(6, aluno.getSenha());
+      ps.setString(7, aluno.getSala());
+      ps.setString(8, aluno.getCpf());
+      
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    } catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    
+  }
   
   
 
