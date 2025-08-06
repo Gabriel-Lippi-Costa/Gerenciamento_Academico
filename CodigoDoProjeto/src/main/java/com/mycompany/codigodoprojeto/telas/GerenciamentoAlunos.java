@@ -6,15 +6,16 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class GerenciamentoAlunos extends javax.swing.JFrame {
-  
+
   private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GerenciamentoAlunos.class.getName());
 
   public GerenciamentoAlunos() {
     super("Gerenciamento Acâdemico");
     initComponents();
     setLocationRelativeTo(null);
+    carregarAlunos();
   }
-  
+
   @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
@@ -229,85 +230,83 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     new EscolherGerenciamento().setVisible(true);
     this.dispose();
-    
+
   }//GEN-LAST:event_voltarButtonActionPerformed
 
   private void AdicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarButtonActionPerformed
     // TODO add your handling code here:
-    
+
     try {
-      
-    String nome = NomeTextField.getText();
-    String curso = CursoTextField.getText();
-    String inicio = InicioTextField.getText();
-    String fim = FimTextField.getText();
-    String email = EmailTextField.getText();
-    String senha = SenhaTextField.getText();
-    String sala = SalaTextField.getText();
-    String cpf = CpfTextField.getText();
-    
-    Aluno aluno = new Aluno(nome, curso, inicio, fim, email, senha, sala, cpf);
-    DAO dao = new DAO();
-    
-    if (dao.criarAluno(aluno)) {
-      JOptionPane.showMessageDialog(null, "Aluno criado com sucesso!");
-      
-      DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
-      
-      
-      model.addRow(new Object[] {
-        
-      aluno.getNome(),
-      aluno.getCurso(),
-      aluno.getInicio(),
-      aluno.getFim(),
-      aluno.getEmail(),
-      aluno.getSenha(),
-      aluno.getSala(),
-      aluno.getCpf()
-        
-      });
-    } else {
-      JOptionPane.showMessageDialog(null, "Erro ao criar aluno!");
-    }
-    
+
+      String nome = NomeTextField.getText();
+      String curso = CursoTextField.getText();
+      String inicio = InicioTextField.getText();
+      String fim = FimTextField.getText();
+      String email = EmailTextField.getText();
+      String senha = SenhaTextField.getText();
+      String sala = SalaTextField.getText();
+      String cpf = CpfTextField.getText();
+
+      Aluno aluno = new Aluno(nome, curso, inicio, fim, email, senha, sala, cpf);
+      DAO dao = new DAO();
+
+      if (dao.criarAluno(aluno)) {
+        JOptionPane.showMessageDialog(null, "Aluno criado com sucesso!");
+
+        DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+
+        model.addRow(new Object[]{
+          aluno.getNome(),
+          aluno.getCurso(),
+          aluno.getInicio(),
+          aluno.getFim(),
+          aluno.getEmail(),
+          aluno.getSenha(),
+          aluno.getSala(),
+          aluno.getCpf()
+
+        });
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao criar aluno!");
+      }
+
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, "Erro!" + e.getMessage());
     }
-    
+
   }//GEN-LAST:event_AdicionarButtonActionPerformed
 
   private void RemoverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverButtonActionPerformed
-    
+
     int linhaSelecionada = AlunosTable.getSelectedRow();
-    
+
     if (linhaSelecionada == -1) {
-      
+
       JOptionPane.showMessageDialog(null, "Selecione um aluno para remover!");
       return;
-      
+
     }
-    
+
     String codigoStr = AlunosTable.getValueAt(linhaSelecionada, 0).toString();
     int codigo = Integer.parseInt(codigoStr);
-    
+
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
-    
+
     if (confirmar == JOptionPane.YES_OPTION) {
       DAO dao = new DAO();
-      if(dao.removerAluno(codigo)) {
+      if (dao.removerAluno(codigo)) {
         DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
         model.removeRow(linhaSelecionada);
         JOptionPane.showMessageDialog(null, "Aluno removido com sucesso!");
       } else {
         JOptionPane.showMessageDialog(null, "Aluno não removido!");
       }
-    }   
-    
+    }
+
   }//GEN-LAST:event_RemoverButtonActionPerformed
 
   public static void main(String args[]) {
-    
+
     try {
       for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
         if ("Nimbus".equals(info.getName())) {
@@ -319,6 +318,33 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       logger.log(java.util.logging.Level.SEVERE, null, ex);
     }
     java.awt.EventQueue.invokeLater(() -> new GerenciamentoAlunos().setVisible(true));
+  }
+
+  private void carregarAlunos() {
+    try {
+      DAO dao = new DAO();
+
+      java.util.List<Aluno> lista = dao.listarAlunos();
+
+      DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+      model.setRowCount(0);
+
+      for (Aluno aluno : lista) {
+          model.addRow(new Object[]{
+            aluno.getNome(),
+            aluno.getCurso(),
+            aluno.getInicio(),
+            aluno.getFim(),
+            aluno.getEmail(),
+            aluno.getSenha(),
+            aluno.getCpf(),
+            aluno.getSala()
+          });
+      }
+
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(null, "Erro ao carregar os alunos!");
+    }
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

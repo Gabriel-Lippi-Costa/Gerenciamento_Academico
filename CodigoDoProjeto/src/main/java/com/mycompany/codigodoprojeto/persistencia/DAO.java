@@ -8,6 +8,8 @@ import com.mycompany.codigodoprojeto.modelos.UsuarioLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAO {
 
@@ -21,6 +23,31 @@ public class DAO {
         return rs.next();
       }
     }
+  }
+  
+  public List<Aluno> listarAlunos() throws Exception {
+    List<Aluno> lista = new ArrayList<>();
+    
+    String sql = "SELECT * FROM tb_aluno";
+    
+    try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+     while (rs.next()) {
+       Aluno aluno = new Aluno(
+         rs.getString("nomeAluno"),
+         rs.getString("cursoAluno"),
+         rs.getString("inicioCursoAluno"),
+         rs.getString("fimCursoAluno"),
+         rs.getString("emailAluno"),
+         rs.getString("senhaAluno"),
+         rs.getString("cpfAluno"),
+         rs.getString("salaAluno")
+       );
+       lista.add(aluno);
+     } 
+    }
+    
+    return lista;
+    
   }
 
   public boolean criarContaUsuario(UsuarioCriarConta usuarioCriarConta) throws Exception {
