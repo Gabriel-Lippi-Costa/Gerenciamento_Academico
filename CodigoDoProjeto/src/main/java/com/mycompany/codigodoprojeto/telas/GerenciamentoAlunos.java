@@ -288,7 +288,8 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       
     }
     
-    int codigo = (int) AlunosTable.getValueAt(linhaSelecionada, 0);
+    String codigoStr = AlunosTable.getValueAt(linhaSelecionada, 0).toString();
+    int codigo = Integer.parseInt(codigoStr);
     
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
     
