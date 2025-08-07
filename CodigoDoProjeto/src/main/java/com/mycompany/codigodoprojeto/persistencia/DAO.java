@@ -99,13 +99,13 @@ public class DAO {
 
   }
 
-  public boolean removerAluno(String cpf) {
+  public boolean removerAluno(int codigo) {
 
-    String sql = "DELETE FROM tb_aluno WHERE cpfAluno = ?";
+    String sql = "DELETE FROM tb_aluno WHERE codigoAluno = ?";
 
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
       
-      ps.setString(1, cpf);
+      ps.setInt(1, codigo);
 
         int linhasAfetadas = ps.executeUpdate();
 

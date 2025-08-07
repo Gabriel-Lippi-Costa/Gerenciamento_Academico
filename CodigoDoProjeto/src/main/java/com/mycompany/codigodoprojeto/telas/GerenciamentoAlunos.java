@@ -108,7 +108,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       },
       new String [] {
-        "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
+        "CÓDIGO", "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
     AlunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,13 +301,14 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     }
 
-    String cpf = AlunosTable.getValueAt(linhaSelecionada, 7).toString();
+    
+    int codigo = Integer.parseInt(AlunosTable.getValueAt(linhaSelecionada, 0).toString());
 
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
 
     if (confirmar == JOptionPane.YES_OPTION) {
       DAO dao = new DAO();
-      if (dao.removerAluno(cpf)) {
+      if (dao.removerAluno(codigo)) {
         DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
         model.removeRow(linhaSelecionada);
         JOptionPane.showMessageDialog(null, "Aluno removido com sucesso!");
@@ -398,6 +399,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       for (Aluno aluno : lista) {
         model.addRow(new Object[]{
+          aluno.getCodigo(),
           aluno.getNome(),
           aluno.getCurso(),
           aluno.getInicio(),
@@ -408,6 +410,10 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
           aluno.getSala()
         });
       }
+      
+      AlunosTable.getColumnModel().getColumn(0).setMinWidth(0);
+      AlunosTable.getColumnModel().getColumn(0).setMaxWidth(0);
+      AlunosTable.getColumnModel().getColumn(0).setWidth(0);
 
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, "Erro ao carregar os alunos!");
