@@ -228,6 +228,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ATUALIZAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtualizarButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="NomeLabel">
           <Properties>
@@ -348,6 +351,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AlunosTableMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

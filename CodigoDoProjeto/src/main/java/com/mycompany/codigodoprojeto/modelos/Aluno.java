@@ -39,6 +39,10 @@ public class Aluno {
     this.cpf = cpf;
   }
 
+  public int getCodigo() {
+    return codigo;
+  }
+
   public String getSala() {
     return sala;
   }

@@ -82,6 +82,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     AtualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     AtualizarButton.setForeground(new java.awt.Color(255, 255, 255));
     AtualizarButton.setText("ATUALIZAR");
+    AtualizarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AtualizarButtonActionPerformed(evt);
+      }
+    });
 
     NomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     NomeLabel.setText("NOME");
@@ -106,6 +111,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
+    AlunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        AlunosTableMouseClicked(evt);
+      }
+    });
     jScrollPane2.setViewportView(AlunosTable);
 
     EmailLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -308,6 +318,60 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
   }//GEN-LAST:event_RemoverButtonActionPerformed
 
+  private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
+    // TODO add your handling code here:
+
+    int linhaSelecionada = AlunosTable.getSelectedRow();
+
+    if (linhaSelecionada == -1) {
+      JOptionPane.showMessageDialog(null, "Selecione um aluno para editar!");
+      return;
+    }
+
+    try {
+      int codigo = Integer.parseInt(AlunosTable.getValueAt(linhaSelecionada, 0).toString());
+
+      String nome = NomeTextField.getText();
+      String curso = CursoTextField.getText();
+      String inicio = InicioTextField.getText();
+      String fim = FimTextField.getText();
+      String email = EmailTextField.getText();
+      String senha = SenhaTextField.getText();
+      String sala = SalaTextField.getText();
+      String cpf = CpfTextField.getText();
+      
+      Aluno aluno = new Aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf);
+      
+      DAO dao = new DAO();
+      
+      if (dao.atualizarAluno(aluno)) {
+        JOptionPane.showMessageDialog(null, "Aluno atualizado com sucesso!");
+        carregarAlunos();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
+      }
+    
+    } catch(Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
+    }
+
+  }//GEN-LAST:event_AtualizarButtonActionPerformed
+
+  private void AlunosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlunosTableMouseClicked
+    // TODO add your handling code here:
+    int linhaSelecionada = AlunosTable.getSelectedRow();
+    
+    NomeTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 1).toString());
+    CursoTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 2).toString());
+    InicioTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 3).toString());
+    FimTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 4).toString());
+    EmailTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 5).toString());
+    SenhaTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 6).toString());
+    SalaTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 7).toString());
+    CpfTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 8).toString());
+  }//GEN-LAST:event_AlunosTableMouseClicked
+ 
   public static void main(String args[]) {
 
     try {
@@ -333,16 +397,16 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       model.setRowCount(0);
 
       for (Aluno aluno : lista) {
-          model.addRow(new Object[]{
-            aluno.getNome(),
-            aluno.getCurso(),
-            aluno.getInicio(),
-            aluno.getFim(),
-            aluno.getEmail(),
-            aluno.getSenha(),
-            aluno.getCpf(),
-            aluno.getSala()
-          });
+        model.addRow(new Object[]{
+          aluno.getNome(),
+          aluno.getCurso(),
+          aluno.getInicio(),
+          aluno.getFim(),
+          aluno.getEmail(),
+          aluno.getSenha(),
+          aluno.getCpf(),
+          aluno.getSala()
+        });
       }
 
     } catch (Exception e) {
