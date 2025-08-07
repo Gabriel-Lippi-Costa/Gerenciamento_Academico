@@ -108,7 +108,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       },
       new String [] {
-        "CÓDIGO", "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
+        "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
     AlunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
