@@ -12,9 +12,10 @@ public class Aluno {
   private String sala;
   private String cpf;
 
-  public Aluno(String nome, String curso, String inicio, String fim,
+  public Aluno(int codigo, String nome, String curso, String inicio, String fim,
           String email, String senha, String sala, String cpf) {
   
+    this.codigo = codigo;
     this.nome = nome;
     this.curso = curso;
     this.inicio = inicio;
@@ -25,10 +26,9 @@ public class Aluno {
     this.cpf = cpf;
   }
   
-  public Aluno(int codigo, String nome, String curso, String inicio, String fim,
+  public Aluno(String nome, String curso, String inicio, String fim,
           String email, String senha, String sala, String cpf) {
-    
-    this.codigo = codigo;
+  
     this.nome = nome;
     this.curso = curso;
     this.inicio = inicio;

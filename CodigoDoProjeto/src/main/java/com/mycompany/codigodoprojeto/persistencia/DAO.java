@@ -33,14 +33,15 @@ public class DAO {
     try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
      while (rs.next()) {
        Aluno aluno = new Aluno(
+         rs.getInt("codigoAluno"),
          rs.getString("nomeAluno"),
          rs.getString("cursoAluno"),
          rs.getString("inicioCursoAluno"),
          rs.getString("fimCursoAluno"),
          rs.getString("emailAluno"),
          rs.getString("senhaAluno"),
-         rs.getString("cpfAluno"),
-         rs.getString("salaAluno")
+         rs.getString("salaAluno"),
+         rs.getString("cpfAluno")
        );
        lista.add(aluno);
      } 
@@ -119,7 +120,7 @@ public class DAO {
     }
 
   public boolean atualizarAluno(Aluno aluno) throws Exception {
-    String sql = "UPDATE tb_aluno SET nomeAluno = ?, cursoAluno = ?, inicioCursoAluno = ?, fimCursoAluno = ?, emailAluno = ?, senhaAluno = ?, salaAluno = ?, cpfAluno = ?";
+    String sql = "UPDATE tb_aluno SET nomeAluno = ?, cursoAluno = ?, inicioCursoAluno = ?, fimCursoAluno = ?, emailAluno = ?, senhaAluno = ?, salaAluno = ?, cpfAluno = ? WHERE codigoAluno = ?";
     
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setString(1, aluno.getNome());
@@ -130,6 +131,7 @@ public class DAO {
       ps.setString(6, aluno.getSenha());
       ps.setString(7, aluno.getSala());
       ps.setString(8, aluno.getCpf());
+      ps.setInt(9, aluno.getCodigo());
       
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
