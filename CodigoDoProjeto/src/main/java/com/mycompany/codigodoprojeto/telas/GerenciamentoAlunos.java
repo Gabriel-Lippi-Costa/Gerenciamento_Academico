@@ -280,6 +280,9 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
           aluno.getCpf()
 
         });
+
+        carregarAlunos();
+
       } else {
         JOptionPane.showMessageDialog(null, "Erro ao criar aluno!");
       }
@@ -301,20 +304,21 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     }
 
-    
     int codigo = Integer.parseInt(AlunosTable.getValueAt(linhaSelecionada, 0).toString());
 
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
 
-    if (confirmar == JOptionPane.YES_OPTION) {
+    try {
       DAO dao = new DAO();
       if (dao.removerAluno(codigo)) {
-        DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
-        model.removeRow(linhaSelecionada);
+        carregarAlunos();
         JOptionPane.showMessageDialog(null, "Aluno removido com sucesso!");
       } else {
         JOptionPane.showMessageDialog(null, "Aluno não removido!");
       }
+    } catch (Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro ao remover aluno: " + e.getMessage());
     }
 
   }//GEN-LAST:event_RemoverButtonActionPerformed
@@ -340,19 +344,19 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       String senha = SenhaTextField.getText();
       String sala = SalaTextField.getText();
       String cpf = CpfTextField.getText();
-      
+
       Aluno aluno = new Aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf);
-      
+
       DAO dao = new DAO();
-      
+
       if (dao.atualizarAluno(aluno)) {
         JOptionPane.showMessageDialog(null, "Aluno atualizado com sucesso!");
         carregarAlunos();
       } else {
         JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
       }
-    
-    } catch(Exception e) {
+
+    } catch (Exception e) {
       e.printStackTrace();
       JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
     }
@@ -362,7 +366,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   private void AlunosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlunosTableMouseClicked
     // TODO add your handling code here:
     int linhaSelecionada = AlunosTable.getSelectedRow();
-    
+
     NomeTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 1).toString());
     CursoTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 2).toString());
     InicioTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 3).toString());
@@ -372,7 +376,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     SalaTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 7).toString());
     CpfTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 8).toString());
   }//GEN-LAST:event_AlunosTableMouseClicked
- 
+
   public static void main(String args[]) {
 
     try {
@@ -406,11 +410,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
           aluno.getFim(),
           aluno.getEmail(),
           aluno.getSenha(),
-          aluno.getCpf(),
-          aluno.getSala()
+          aluno.getSala(),
+          aluno.getCpf()
         });
       }
-      
+
       AlunosTable.getColumnModel().getColumn(0).setMinWidth(0);
       AlunosTable.getColumnModel().getColumn(0).setMaxWidth(0);
       AlunosTable.getColumnModel().getColumn(0).setWidth(0);

@@ -100,7 +100,7 @@ public class DAO {
 
   }
 
-  public boolean removerAluno(int codigo) {
+  public boolean removerAluno(int codigo) throws Exception{
 
     String sql = "DELETE FROM tb_aluno WHERE codigoAluno = ?";
 
