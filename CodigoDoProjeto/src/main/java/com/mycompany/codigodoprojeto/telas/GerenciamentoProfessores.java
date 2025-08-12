@@ -13,63 +13,63 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
   private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
-    jButton1 = new javax.swing.JButton();
-    jLabel1 = new javax.swing.JLabel();
-    jLabel2 = new javax.swing.JLabel();
-    jLabel3 = new javax.swing.JLabel();
-    jLabel4 = new javax.swing.JLabel();
-    jLabel5 = new javax.swing.JLabel();
-    jTextField1 = new javax.swing.JTextField();
-    jTextField2 = new javax.swing.JTextField();
-    jTextField3 = new javax.swing.JTextField();
-    jTextField4 = new javax.swing.JTextField();
-    jTextField5 = new javax.swing.JTextField();
-    jButton2 = new javax.swing.JButton();
-    jButton3 = new javax.swing.JButton();
-    jButton4 = new javax.swing.JButton();
+    voltarButton = new javax.swing.JButton();
+    nomeLabel = new javax.swing.JLabel();
+    ensinaLabel = new javax.swing.JLabel();
+    emailLabel = new javax.swing.JLabel();
+    senhaLabel = new javax.swing.JLabel();
+    cpfLabel = new javax.swing.JLabel();
+    nomeTextField = new javax.swing.JTextField();
+    ensinaTextField = new javax.swing.JTextField();
+    emailTextField = new javax.swing.JTextField();
+    senhaTextField = new javax.swing.JTextField();
+    cpfTextField = new javax.swing.JTextField();
+    adicionarButton = new javax.swing.JButton();
+    removerButton = new javax.swing.JButton();
+    atualizarButton = new javax.swing.JButton();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTable1 = new javax.swing.JTable();
+    professorTable = new javax.swing.JTable();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-    jButton1.setBackground(new java.awt.Color(255, 0, 0));
-    jButton1.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
-    jButton1.setForeground(new java.awt.Color(255, 255, 255));
-    jButton1.setText("VOLTAR");
+    voltarButton.setBackground(new java.awt.Color(255, 0, 0));
+    voltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+    voltarButton.setForeground(new java.awt.Color(255, 255, 255));
+    voltarButton.setText("VOLTAR");
 
-    jLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel1.setText("NOME");
+    nomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    nomeLabel.setText("NOME");
 
-    jLabel2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel2.setText("ENSINA");
+    ensinaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    ensinaLabel.setText("ENSINA");
 
-    jLabel3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel3.setText("EMAIL");
+    emailLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    emailLabel.setText("EMAIL");
 
-    jLabel4.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel4.setText("SENHA");
+    senhaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    senhaLabel.setText("SENHA");
 
-    jLabel5.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel5.setText("CPF");
+    cpfLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    cpfLabel.setText("CPF");
 
-    jButton2.setBackground(new java.awt.Color(0, 0, 0));
-    jButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jButton2.setForeground(new java.awt.Color(255, 255, 255));
-    jButton2.setText("ADICIONAR");
+    adicionarButton.setBackground(new java.awt.Color(0, 0, 0));
+    adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
+    adicionarButton.setText("ADICIONAR");
 
-    jButton3.setBackground(new java.awt.Color(0, 0, 0));
-    jButton3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jButton3.setForeground(new java.awt.Color(255, 255, 255));
-    jButton3.setText("REMOVER");
+    removerButton.setBackground(new java.awt.Color(0, 0, 0));
+    removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    removerButton.setForeground(new java.awt.Color(255, 255, 255));
+    removerButton.setText("REMOVER");
 
-    jButton4.setBackground(new java.awt.Color(0, 0, 0));
-    jButton4.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jButton4.setForeground(new java.awt.Color(255, 255, 255));
-    jButton4.setText("ATUALIZAR");
+    atualizarButton.setBackground(new java.awt.Color(0, 0, 0));
+    atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+    atualizarButton.setText("ATUALIZAR");
 
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    professorTable.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null},
         {null, null, null, null, null},
@@ -80,7 +80,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
       }
     ));
-    jScrollPane1.setViewportView(jTable1);
+    jScrollPane1.setViewportView(professorTable);
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -90,39 +90,39 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(69, 69, 69)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel1)
-              .addComponent(jLabel3)
-              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(nomeLabel)
+              .addComponent(emailLabel)
+              .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel4)
+                    .addComponent(senhaLabel)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(senhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel2)
+                    .addComponent(ensinaLabel)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(ensinaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(cpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(50, 50, 50)
-            .addComponent(jButton2)
+            .addComponent(adicionarButton)
             .addGap(184, 184, 184)
-            .addComponent(jButton3)
+            .addComponent(removerButton)
             .addGap(222, 222, 222)
-            .addComponent(jButton4))
+            .addComponent(atualizarButton))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -132,28 +132,28 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(52, 52, 52)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel1)
-          .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel2)
-          .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(nomeLabel)
+          .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(ensinaLabel)
+          .addComponent(ensinaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(33, 33, 33)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel3)
-          .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel4)
-          .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(emailLabel)
+          .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(senhaLabel)
+          .addComponent(senhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(26, 26, 26)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel5)
-          .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(cpfLabel)
+          .addComponent(cpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(49, 49, 49)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jButton2)
-          .addComponent(jButton3)
-          .addComponent(jButton4))
+          .addComponent(adicionarButton)
+          .addComponent(removerButton)
+          .addComponent(atualizarButton))
         .addGap(18, 18, 18)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -194,22 +194,22 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
-  private javax.swing.JButton jButton2;
-  private javax.swing.JButton jButton3;
-  private javax.swing.JButton jButton4;
-  private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel2;
-  private javax.swing.JLabel jLabel3;
-  private javax.swing.JLabel jLabel4;
-  private javax.swing.JLabel jLabel5;
+  private javax.swing.JButton adicionarButton;
+  private javax.swing.JButton atualizarButton;
+  private javax.swing.JLabel cpfLabel;
+  private javax.swing.JTextField cpfTextField;
+  private javax.swing.JLabel emailLabel;
+  private javax.swing.JTextField emailTextField;
+  private javax.swing.JLabel ensinaLabel;
+  private javax.swing.JTextField ensinaTextField;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTable1;
-  private javax.swing.JTextField jTextField1;
-  private javax.swing.JTextField jTextField2;
-  private javax.swing.JTextField jTextField3;
-  private javax.swing.JTextField jTextField4;
-  private javax.swing.JTextField jTextField5;
+  private javax.swing.JLabel nomeLabel;
+  private javax.swing.JTextField nomeTextField;
+  private javax.swing.JTable professorTable;
+  private javax.swing.JButton removerButton;
+  private javax.swing.JLabel senhaLabel;
+  private javax.swing.JTextField senhaTextField;
+  private javax.swing.JButton voltarButton;
   // End of variables declaration//GEN-END:variables
 }

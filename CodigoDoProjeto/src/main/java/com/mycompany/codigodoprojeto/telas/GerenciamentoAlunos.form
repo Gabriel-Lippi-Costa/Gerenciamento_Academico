@@ -47,28 +47,28 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="AdicionarButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="adicionarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="RemoverButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="removerButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
-                          <Component id="AtualizarButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="atualizarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="NomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FimLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fimLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="InicioTextField" min="-2" pref="131" max="-2" attributes="0"/>
-                                      <Component id="NomeTextField" min="-2" pref="132" max="-2" attributes="0"/>
+                                      <Component id="inicioTextField" min="-2" pref="131" max="-2" attributes="0"/>
+                                      <Component id="nomeTextField" min="-2" pref="132" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="SalaLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="salaLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="SalaTextField" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
@@ -76,31 +76,31 @@
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="CursoLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cursoLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CursoTextField" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <Component id="cursoTextField" min="-2" pref="131" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="InicioLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inicioLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="FimTextField" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <Component id="fimTextField" min="-2" pref="132" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="CpfLabel" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="cpfLabel" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="CpfTextField" min="-2" pref="131" max="-2" attributes="0"/>
+                                          <Component id="cpfTextField" min="-2" pref="131" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="EmailLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="EmailTextField" min="-2" pref="131" max="-2" attributes="0"/>
+                                          <Component id="emailTextField" min="-2" pref="131" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="SenhaLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="senhaLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="SenhaTextField" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <Component id="senhaTextField" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="394" max="32767" attributes="0"/>
@@ -127,34 +127,34 @@
                   <Component id="voltarButton" min="-2" pref="51" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NomeTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="CursoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CursoTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="InicioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FimTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="nomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomeTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="cursoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cursoTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="inicioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fimTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FimLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="InicioTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="SenhaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SenhaTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="EmailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EmailTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="fimLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="inicioTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="senhaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="senhaTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="emailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CpfLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CpfTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="SalaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cpfLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cpfTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="salaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SalaTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="47" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AdicionarButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="RemoverButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="AtualizarButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="adicionarButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="removerButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="atualizarButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
@@ -181,7 +181,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltarButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AdicionarButton">
+        <Component class="javax.swing.JButton" name="adicionarButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -195,10 +195,10 @@
             <Property name="text" type="java.lang.String" value="ADICIONAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdicionarButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adicionarButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="RemoverButton">
+        <Component class="javax.swing.JButton" name="removerButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -212,10 +212,10 @@
             <Property name="text" type="java.lang.String" value="REMOVER"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoverButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removerButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AtualizarButton">
+        <Component class="javax.swing.JButton" name="atualizarButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -229,10 +229,10 @@
             <Property name="text" type="java.lang.String" value="ATUALIZAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtualizarButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atualizarButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="NomeLabel">
+        <Component class="javax.swing.JLabel" name="nomeLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -240,7 +240,7 @@
             <Property name="text" type="java.lang.String" value="NOME"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="CursoLabel">
+        <Component class="javax.swing.JLabel" name="cursoLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -248,7 +248,7 @@
             <Property name="text" type="java.lang.String" value="CURSO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="FimLabel">
+        <Component class="javax.swing.JLabel" name="fimLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -256,7 +256,7 @@
             <Property name="text" type="java.lang.String" value="FIM"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="InicioLabel">
+        <Component class="javax.swing.JLabel" name="inicioLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -264,7 +264,7 @@
             <Property name="text" type="java.lang.String" value="INICIO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="SenhaLabel">
+        <Component class="javax.swing.JLabel" name="senhaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -272,15 +272,15 @@
             <Property name="text" type="java.lang.String" value="SENHA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NomeTextField">
+        <Component class="javax.swing.JTextField" name="nomeTextField">
         </Component>
-        <Component class="javax.swing.JTextField" name="CursoTextField">
+        <Component class="javax.swing.JTextField" name="cursoTextField">
         </Component>
-        <Component class="javax.swing.JTextField" name="FimTextField">
+        <Component class="javax.swing.JTextField" name="fimTextField">
         </Component>
-        <Component class="javax.swing.JTextField" name="InicioTextField">
+        <Component class="javax.swing.JTextField" name="inicioTextField">
         </Component>
-        <Component class="javax.swing.JTextField" name="SenhaTextField">
+        <Component class="javax.swing.JTextField" name="senhaTextField">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
@@ -289,7 +289,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="AlunosTable">
+            <Component class="javax.swing.JTable" name="alunosTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="8" rowCount="0">
@@ -352,12 +352,12 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AlunosTableMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="alunosTableMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="EmailLabel">
+        <Component class="javax.swing.JLabel" name="emailLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -365,9 +365,9 @@
             <Property name="text" type="java.lang.String" value="EMAIL"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="EmailTextField">
+        <Component class="javax.swing.JTextField" name="emailTextField">
         </Component>
-        <Component class="javax.swing.JLabel" name="SalaLabel">
+        <Component class="javax.swing.JLabel" name="salaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -375,7 +375,7 @@
             <Property name="text" type="java.lang.String" value="SALA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="CpfLabel">
+        <Component class="javax.swing.JLabel" name="cpfLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
@@ -383,7 +383,7 @@
             <Property name="text" type="java.lang.String" value="CPF"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CpfTextField">
+        <Component class="javax.swing.JTextField" name="cpfTextField">
         </Component>
         <Component class="javax.swing.JTextField" name="SalaTextField">
         </Component>

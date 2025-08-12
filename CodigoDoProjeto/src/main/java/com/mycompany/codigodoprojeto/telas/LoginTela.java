@@ -20,9 +20,9 @@ public class LoginTela extends javax.swing.JFrame {
 
     grandePanel = new javax.swing.JPanel();
     esquerdaPanel = new javax.swing.JPanel();
-    jLabel6 = new javax.swing.JLabel();
-    jLabel7 = new javax.swing.JLabel();
-    jLabel9 = new javax.swing.JLabel();
+    copyrightLabel = new javax.swing.JLabel();
+    marcaPessoalLabel = new javax.swing.JLabel();
+    logoPessoalLabel = new javax.swing.JLabel();
     tituloLabel = new javax.swing.JLabel();
     emailLabel = new javax.swing.JLabel();
     senhaLabel = new javax.swing.JLabel();
@@ -41,15 +41,15 @@ public class LoginTela extends javax.swing.JFrame {
     esquerdaPanel.setBackground(new java.awt.Color(41, 41, 41));
     esquerdaPanel.setPreferredSize(new java.awt.Dimension(400, 500));
 
-    jLabel6.setFont(new java.awt.Font("Arial", 0, 19)); // NOI18N
-    jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel6.setText("© 2025 - Todos os direitos reservados.");
+    copyrightLabel.setFont(new java.awt.Font("Arial", 0, 19)); // NOI18N
+    copyrightLabel.setForeground(new java.awt.Color(255, 255, 255));
+    copyrightLabel.setText("© 2025 - Todos os direitos reservados.");
 
-    jLabel7.setFont(new java.awt.Font("Arial", 1, 50)); // NOI18N
-    jLabel7.setForeground(new java.awt.Color(102, 178, 255));
-    jLabel7.setText("G.L.D.C.");
+    marcaPessoalLabel.setFont(new java.awt.Font("Arial", 1, 50)); // NOI18N
+    marcaPessoalLabel.setForeground(new java.awt.Color(102, 178, 255));
+    marcaPessoalLabel.setText("G.L.D.C.");
 
-    jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\logo.png")); // NOI18N
+    logoPessoalLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\logo.png")); // NOI18N
 
     javax.swing.GroupLayout esquerdaPanelLayout = new javax.swing.GroupLayout(esquerdaPanel);
     esquerdaPanel.setLayout(esquerdaPanelLayout);
@@ -59,24 +59,24 @@ public class LoginTela extends javax.swing.JFrame {
         .addGroup(esquerdaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(97, 97, 97)
-            .addComponent(jLabel7))
+            .addComponent(marcaPessoalLabel))
           .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(34, 34, 34)
-            .addComponent(jLabel6))
+            .addComponent(copyrightLabel))
           .addGroup(esquerdaPanelLayout.createSequentialGroup()
             .addGap(150, 150, 150)
-            .addComponent(jLabel9)))
+            .addComponent(logoPessoalLabel)))
         .addContainerGap(36, Short.MAX_VALUE))
     );
     esquerdaPanelLayout.setVerticalGroup(
       esquerdaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, esquerdaPanelLayout.createSequentialGroup()
         .addContainerGap(149, Short.MAX_VALUE)
-        .addComponent(jLabel9)
+        .addComponent(logoPessoalLabel)
         .addGap(18, 18, 18)
-        .addComponent(jLabel7)
+        .addComponent(marcaPessoalLabel)
         .addGap(112, 112, 112)
-        .addComponent(jLabel6)
+        .addComponent(copyrightLabel)
         .addGap(59, 59, 59))
     );
 
@@ -196,6 +196,7 @@ public class LoginTela extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JLabel copyrightLabel;
   private javax.swing.JLabel criarContaLabel;
   private javax.swing.JLabel emailLabel;
   private javax.swing.JTextField emailTextField;
@@ -203,9 +204,8 @@ public class LoginTela extends javax.swing.JFrame {
   private javax.swing.JLabel esqueciSenhaLabel;
   private javax.swing.JPanel esquerdaPanel;
   private javax.swing.JPanel grandePanel;
-  private javax.swing.JLabel jLabel6;
-  private javax.swing.JLabel jLabel7;
-  private javax.swing.JLabel jLabel9;
+  private javax.swing.JLabel logoPessoalLabel;
+  private javax.swing.JLabel marcaPessoalLabel;
   private javax.swing.JLabel senhaLabel;
   private javax.swing.JPasswordField senhaPasswordField;
   private javax.swing.JLabel tituloLabel;

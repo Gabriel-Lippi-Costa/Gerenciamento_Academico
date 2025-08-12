@@ -22,26 +22,26 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     jPanel1 = new javax.swing.JPanel();
     voltarButton = new javax.swing.JButton();
-    AdicionarButton = new javax.swing.JButton();
-    RemoverButton = new javax.swing.JButton();
-    AtualizarButton = new javax.swing.JButton();
-    NomeLabel = new javax.swing.JLabel();
-    CursoLabel = new javax.swing.JLabel();
-    FimLabel = new javax.swing.JLabel();
-    InicioLabel = new javax.swing.JLabel();
-    SenhaLabel = new javax.swing.JLabel();
-    NomeTextField = new javax.swing.JTextField();
-    CursoTextField = new javax.swing.JTextField();
-    FimTextField = new javax.swing.JTextField();
-    InicioTextField = new javax.swing.JTextField();
-    SenhaTextField = new javax.swing.JTextField();
+    adicionarButton = new javax.swing.JButton();
+    removerButton = new javax.swing.JButton();
+    atualizarButton = new javax.swing.JButton();
+    nomeLabel = new javax.swing.JLabel();
+    cursoLabel = new javax.swing.JLabel();
+    fimLabel = new javax.swing.JLabel();
+    inicioLabel = new javax.swing.JLabel();
+    senhaLabel = new javax.swing.JLabel();
+    nomeTextField = new javax.swing.JTextField();
+    cursoTextField = new javax.swing.JTextField();
+    fimTextField = new javax.swing.JTextField();
+    inicioTextField = new javax.swing.JTextField();
+    senhaTextField = new javax.swing.JTextField();
     jScrollPane2 = new javax.swing.JScrollPane();
-    AlunosTable = new javax.swing.JTable();
-    EmailLabel = new javax.swing.JLabel();
-    EmailTextField = new javax.swing.JTextField();
-    SalaLabel = new javax.swing.JLabel();
-    CpfLabel = new javax.swing.JLabel();
-    CpfTextField = new javax.swing.JTextField();
+    alunosTable = new javax.swing.JTable();
+    emailLabel = new javax.swing.JLabel();
+    emailTextField = new javax.swing.JTextField();
+    salaLabel = new javax.swing.JLabel();
+    cpfLabel = new javax.swing.JLabel();
+    cpfTextField = new javax.swing.JTextField();
     SalaTextField = new javax.swing.JTextField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,52 +58,52 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       }
     });
 
-    AdicionarButton.setBackground(new java.awt.Color(0, 0, 0));
-    AdicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    AdicionarButton.setForeground(new java.awt.Color(255, 255, 255));
-    AdicionarButton.setText("ADICIONAR");
-    AdicionarButton.addActionListener(new java.awt.event.ActionListener() {
+    adicionarButton.setBackground(new java.awt.Color(0, 0, 0));
+    adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
+    adicionarButton.setText("ADICIONAR");
+    adicionarButton.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        AdicionarButtonActionPerformed(evt);
+        adicionarButtonActionPerformed(evt);
       }
     });
 
-    RemoverButton.setBackground(new java.awt.Color(0, 0, 0));
-    RemoverButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    RemoverButton.setForeground(new java.awt.Color(255, 255, 255));
-    RemoverButton.setText("REMOVER");
-    RemoverButton.addActionListener(new java.awt.event.ActionListener() {
+    removerButton.setBackground(new java.awt.Color(0, 0, 0));
+    removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    removerButton.setForeground(new java.awt.Color(255, 255, 255));
+    removerButton.setText("REMOVER");
+    removerButton.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        RemoverButtonActionPerformed(evt);
+        removerButtonActionPerformed(evt);
       }
     });
 
-    AtualizarButton.setBackground(new java.awt.Color(0, 0, 0));
-    AtualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    AtualizarButton.setForeground(new java.awt.Color(255, 255, 255));
-    AtualizarButton.setText("ATUALIZAR");
-    AtualizarButton.addActionListener(new java.awt.event.ActionListener() {
+    atualizarButton.setBackground(new java.awt.Color(0, 0, 0));
+    atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+    atualizarButton.setText("ATUALIZAR");
+    atualizarButton.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        AtualizarButtonActionPerformed(evt);
+        atualizarButtonActionPerformed(evt);
       }
     });
 
-    NomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    NomeLabel.setText("NOME");
+    nomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    nomeLabel.setText("NOME");
 
-    CursoLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    CursoLabel.setText("CURSO");
+    cursoLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    cursoLabel.setText("CURSO");
 
-    FimLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    FimLabel.setText("FIM");
+    fimLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    fimLabel.setText("FIM");
 
-    InicioLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    InicioLabel.setText("INICIO");
+    inicioLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    inicioLabel.setText("INICIO");
 
-    SenhaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    SenhaLabel.setText("SENHA");
+    senhaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    senhaLabel.setText("SENHA");
 
-    AlunosTable.setModel(new javax.swing.table.DefaultTableModel(
+    alunosTable.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
 
       },
@@ -111,21 +111,21 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
-    AlunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
+    alunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        AlunosTableMouseClicked(evt);
+        alunosTableMouseClicked(evt);
       }
     });
-    jScrollPane2.setViewportView(AlunosTable);
+    jScrollPane2.setViewportView(alunosTable);
 
-    EmailLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    EmailLabel.setText("EMAIL");
+    emailLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    emailLabel.setText("EMAIL");
 
-    SalaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    SalaLabel.setText("SALA");
+    salaLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    salaLabel.setText("SALA");
 
-    CpfLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    CpfLabel.setText("CPF");
+    cpfLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    cpfLabel.setText("CPF");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -135,50 +135,50 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         .addGap(32, 32, 32)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(AdicionarButton)
+            .addComponent(adicionarButton)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(RemoverButton)
+            .addComponent(removerButton)
             .addGap(207, 207, 207)
-            .addComponent(AtualizarButton)
+            .addComponent(atualizarButton)
             .addGap(251, 251, 251))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(NomeLabel)
-                  .addComponent(FimLabel))
+                  .addComponent(nomeLabel)
+                  .addComponent(fimLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(InicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(inicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(SalaLabel)
+                .addComponent(salaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SalaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(34, 34, 34)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(CursoLabel)
+                .addComponent(cursoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CursoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cursoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(InicioLabel)
+                .addComponent(inicioLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(fimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(CpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
-                    .addComponent(CpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(EmailLabel)
+                    .addComponent(emailLabel)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
-                .addComponent(SenhaLabel)
+                .addComponent(senhaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SenhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(senhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addContainerGap(394, Short.MAX_VALUE))))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
@@ -196,31 +196,31 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(24, 24, 24)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(NomeLabel)
-          .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(CursoLabel)
-          .addComponent(CursoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(InicioLabel)
-          .addComponent(FimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(nomeLabel)
+          .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(cursoLabel)
+          .addComponent(cursoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(inicioLabel)
+          .addComponent(fimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(33, 33, 33)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(FimLabel)
-          .addComponent(InicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(SenhaLabel)
-          .addComponent(SenhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(EmailLabel)
-          .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(fimLabel)
+          .addComponent(inicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(senhaLabel)
+          .addComponent(senhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(emailLabel)
+          .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(30, 30, 30)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(CpfLabel)
-          .addComponent(CpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(SalaLabel)
+          .addComponent(cpfLabel)
+          .addComponent(cpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(salaLabel)
           .addComponent(SalaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(AdicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(RemoverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(AtualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(adicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(removerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(30, 30, 30)
         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap())
@@ -247,17 +247,17 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
   }//GEN-LAST:event_voltarButtonActionPerformed
 
-  private void AdicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarButtonActionPerformed
+  private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
     try {
 
-      String nome = NomeTextField.getText();
-      String curso = CursoTextField.getText();
-      String inicio = InicioTextField.getText();
-      String fim = FimTextField.getText();
-      String email = EmailTextField.getText();
-      String senha = SenhaTextField.getText();
+      String nome = nomeTextField.getText();
+      String curso = cursoTextField.getText();
+      String inicio = inicioTextField.getText();
+      String fim = fimTextField.getText();
+      String email = emailTextField.getText();
+      String senha = senhaTextField.getText();
       String sala = SalaTextField.getText();
-      String cpf = CpfTextField.getText();
+      String cpf = cpfTextField.getText();
 
       Aluno aluno = new Aluno(nome, curso, inicio, fim, email, senha, sala, cpf);
       DAO dao = new DAO();
@@ -265,7 +265,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       if (dao.criarAluno(aluno)) {
         JOptionPane.showMessageDialog(null, "Aluno criado com sucesso!");
 
-        DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) alunosTable.getModel();
 
         model.addRow(new Object[]{
           aluno.getNome(),
@@ -289,11 +289,11 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(null, "Erro!" + e.getMessage());
     }
 
-  }//GEN-LAST:event_AdicionarButtonActionPerformed
+  }//GEN-LAST:event_adicionarButtonActionPerformed
 
-  private void RemoverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverButtonActionPerformed
+  private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerButtonActionPerformed
 
-    int linhaSelecionada = AlunosTable.getSelectedRow();
+    int linhaSelecionada = alunosTable.getSelectedRow();
 
     if (linhaSelecionada == -1) {
 
@@ -302,7 +302,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     }
 
-    int codigo = Integer.parseInt(AlunosTable.getValueAt(linhaSelecionada, 0).toString());
+    int codigo = Integer.parseInt(alunosTable.getValueAt(linhaSelecionada, 0).toString());
 
     int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover o aluno?", "Confirmação", JOptionPane.YES_NO_OPTION);
 
@@ -319,10 +319,10 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(null, "Erro ao remover aluno: " + e.getMessage());
     }
 
-  }//GEN-LAST:event_RemoverButtonActionPerformed
+  }//GEN-LAST:event_removerButtonActionPerformed
 
-  private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
-    int linhaSelecionada = AlunosTable.getSelectedRow();
+  private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
+    int linhaSelecionada = alunosTable.getSelectedRow();
 
     if (linhaSelecionada == -1) {
       JOptionPane.showMessageDialog(null, "Selecione um aluno para editar!");
@@ -330,16 +330,16 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
     }
 
     try {
-      int codigo = Integer.parseInt(AlunosTable.getValueAt(linhaSelecionada, 0).toString());
+      int codigo = Integer.parseInt(alunosTable.getValueAt(linhaSelecionada, 0).toString());
 
-      String nome = NomeTextField.getText();
-      String curso = CursoTextField.getText();
-      String inicio = InicioTextField.getText();
-      String fim = FimTextField.getText();
-      String email = EmailTextField.getText();
-      String senha = SenhaTextField.getText();
+      String nome = nomeTextField.getText();
+      String curso = cursoTextField.getText();
+      String inicio = inicioTextField.getText();
+      String fim = fimTextField.getText();
+      String email = emailTextField.getText();
+      String senha = senhaTextField.getText();
       String sala = SalaTextField.getText();
-      String cpf = CpfTextField.getText();
+      String cpf = cpfTextField.getText();
 
       Aluno aluno = new Aluno(codigo, nome, curso, inicio, fim, email, senha, sala, cpf);
 
@@ -357,20 +357,20 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
     }
 
-  }//GEN-LAST:event_AtualizarButtonActionPerformed
+  }//GEN-LAST:event_atualizarButtonActionPerformed
 
-  private void AlunosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlunosTableMouseClicked
-    int linhaSelecionada = AlunosTable.getSelectedRow();
+  private void alunosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunosTableMouseClicked
+    int linhaSelecionada = alunosTable.getSelectedRow();
 
-    NomeTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 1).toString());
-    CursoTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 2).toString());
-    InicioTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 3).toString());
-    FimTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 4).toString());
-    EmailTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 5).toString());
-    SenhaTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 6).toString());
-    SalaTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 7).toString());
-    CpfTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 8).toString());
-  }//GEN-LAST:event_AlunosTableMouseClicked
+    nomeTextField.setText(alunosTable.getValueAt(linhaSelecionada, 1).toString());
+    cursoTextField.setText(alunosTable.getValueAt(linhaSelecionada, 2).toString());
+    inicioTextField.setText(alunosTable.getValueAt(linhaSelecionada, 3).toString());
+    fimTextField.setText(alunosTable.getValueAt(linhaSelecionada, 4).toString());
+    emailTextField.setText(alunosTable.getValueAt(linhaSelecionada, 5).toString());
+    senhaTextField.setText(alunosTable.getValueAt(linhaSelecionada, 6).toString());
+    SalaTextField.setText(alunosTable.getValueAt(linhaSelecionada, 7).toString());
+    cpfTextField.setText(alunosTable.getValueAt(linhaSelecionada, 8).toString());
+  }//GEN-LAST:event_alunosTableMouseClicked
 
   public static void main(String args[]) {
 
@@ -393,7 +393,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       java.util.List<Aluno> lista = dao.listarAlunos();
 
-      DefaultTableModel model = (DefaultTableModel) AlunosTable.getModel();
+      DefaultTableModel model = (DefaultTableModel) alunosTable.getModel();
       model.setRowCount(0);
 
       for (Aluno aluno : lista) {
@@ -410,9 +410,9 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
         });
       }
 
-      AlunosTable.getColumnModel().getColumn(0).setMinWidth(0);
-      AlunosTable.getColumnModel().getColumn(0).setMaxWidth(0);
-      AlunosTable.getColumnModel().getColumn(0).setWidth(0);
+      alunosTable.getColumnModel().getColumn(0).setMinWidth(0);
+      alunosTable.getColumnModel().getColumn(0).setMaxWidth(0);
+      alunosTable.getColumnModel().getColumn(0).setWidth(0);
 
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, "Erro ao carregar os alunos!");
@@ -420,28 +420,28 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton AdicionarButton;
-  private javax.swing.JTable AlunosTable;
-  private javax.swing.JButton AtualizarButton;
-  private javax.swing.JLabel CpfLabel;
-  private javax.swing.JTextField CpfTextField;
-  private javax.swing.JLabel CursoLabel;
-  private javax.swing.JTextField CursoTextField;
-  private javax.swing.JLabel EmailLabel;
-  private javax.swing.JTextField EmailTextField;
-  private javax.swing.JLabel FimLabel;
-  private javax.swing.JTextField FimTextField;
-  private javax.swing.JLabel InicioLabel;
-  private javax.swing.JTextField InicioTextField;
-  private javax.swing.JLabel NomeLabel;
-  private javax.swing.JTextField NomeTextField;
-  private javax.swing.JButton RemoverButton;
-  private javax.swing.JLabel SalaLabel;
   private javax.swing.JTextField SalaTextField;
-  private javax.swing.JLabel SenhaLabel;
-  private javax.swing.JTextField SenhaTextField;
+  private javax.swing.JButton adicionarButton;
+  private javax.swing.JTable alunosTable;
+  private javax.swing.JButton atualizarButton;
+  private javax.swing.JLabel cpfLabel;
+  private javax.swing.JTextField cpfTextField;
+  private javax.swing.JLabel cursoLabel;
+  private javax.swing.JTextField cursoTextField;
+  private javax.swing.JLabel emailLabel;
+  private javax.swing.JTextField emailTextField;
+  private javax.swing.JLabel fimLabel;
+  private javax.swing.JTextField fimTextField;
+  private javax.swing.JLabel inicioLabel;
+  private javax.swing.JTextField inicioTextField;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane2;
+  private javax.swing.JLabel nomeLabel;
+  private javax.swing.JTextField nomeTextField;
+  private javax.swing.JButton removerButton;
+  private javax.swing.JLabel salaLabel;
+  private javax.swing.JLabel senhaLabel;
+  private javax.swing.JTextField senhaTextField;
   private javax.swing.JButton voltarButton;
   // End of variables declaration//GEN-END:variables
 }
