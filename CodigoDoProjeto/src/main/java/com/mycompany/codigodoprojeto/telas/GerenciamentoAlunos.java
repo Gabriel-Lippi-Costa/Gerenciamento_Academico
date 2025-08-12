@@ -108,7 +108,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
       },
       new String [] {
-        "CÓDIGO", "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
+        "NOME", "CURSO", "INICIO", "FIM", "EMAIL", "SENHA", "SALA", "CPF"
       }
     ));
     AlunosTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -248,8 +248,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   }//GEN-LAST:event_voltarButtonActionPerformed
 
   private void AdicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarButtonActionPerformed
-    // TODO add your handling code here:
-
     try {
 
       String nome = NomeTextField.getText();
@@ -324,8 +322,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   }//GEN-LAST:event_RemoverButtonActionPerformed
 
   private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
-    // TODO add your handling code here:
-
     int linhaSelecionada = AlunosTable.getSelectedRow();
 
     if (linhaSelecionada == -1) {
@@ -364,7 +360,6 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
   }//GEN-LAST:event_AtualizarButtonActionPerformed
 
   private void AlunosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlunosTableMouseClicked
-    // TODO add your handling code here:
     int linhaSelecionada = AlunosTable.getSelectedRow();
 
     NomeTextField.setText(AlunosTable.getValueAt(linhaSelecionada, 1).toString());

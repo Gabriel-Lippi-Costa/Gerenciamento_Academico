@@ -94,7 +94,6 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void AlunoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlunoButtonActionPerformed
-    // TODO add your handling code here:
     new GerenciamentoAlunos().setVisible(true);
     this.dispose();
   }//GEN-LAST:event_AlunoButtonActionPerformed
