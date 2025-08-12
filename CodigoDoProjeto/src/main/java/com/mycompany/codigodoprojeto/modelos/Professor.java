@@ -2,11 +2,33 @@ package com.mycompany.codigodoprojeto.modelos;
 
 public class Professor {
   
+  private int codigo;
   private String nome;
   private String ensina;
   private String email;
   private String senha;
   private String cpf;
+  
+  public Professor (String nome, String ensina, 
+          String email, String senha, String cpf) {
+    
+    this.nome = nome;
+    this.ensina = ensina;
+    this.email = email;
+    this.senha = senha;
+    this.cpf = cpf;
+  }
+  
+  public Professor (int codigo, String nome, String ensina, 
+          String email, String senha, String cpf) {
+    
+    this.codigo = codigo;
+    this.nome = nome;
+    this.ensina = ensina;
+    this.email = email;
+    this.senha = senha;
+    this.cpf = cpf;
+  }
 
   public String getNome() {
     return nome;
