@@ -1,3 +1,4 @@
+
 package com.mycompany.codigodoprojeto.persistencia;
 
 import com.mycompany.codigodoprojeto.modelos.Aluno;
@@ -5,11 +6,13 @@ import com.mycompany.codigodoprojeto.modelos.Professor;
 import com.mycompany.codigodoprojeto.modelos.UsuarioCriarConta;
 import com.mycompany.codigodoprojeto.modelos.UsuarioEsqueceuSenha;
 import com.mycompany.codigodoprojeto.modelos.UsuarioLogin;
+import com.mycompany.codigodoprojeto.persistencia.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class DAO {
 
@@ -158,6 +161,28 @@ public class DAO {
       return linhasAfetadas > 0;
 
     }
+
+  }
+  
+  public List<Professor> listarProfessor() throws Exception {
+    List<Professor> lista = new ArrayList<>();
+    
+    String sql = "SELECT * FROM tb_professor";
+
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+      while(rs.next()) {
+        Professor professor = new Professor(
+           rs.getInt("codigoProfessor"),
+           rs.getString("nomeProfessor"),
+           rs.getString("ensinaProfessor"),
+           rs.getString("emailProfessor"),
+           rs.getString("senhaProfessor"),
+           rs.getString("cpfProfessor")
+        );
+        lista.add(professor);
+      }
+    }
+    return lista;
 
   }
 

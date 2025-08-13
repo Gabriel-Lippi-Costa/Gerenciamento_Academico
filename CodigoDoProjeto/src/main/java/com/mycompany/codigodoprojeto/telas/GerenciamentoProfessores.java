@@ -6,6 +6,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
 
   public GerenciamentoProfessores() {
     initComponents();
+    setLocationRelativeTo(null);
   }
 
   @SuppressWarnings("unchecked")
@@ -38,6 +39,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     voltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
     voltarButton.setForeground(new java.awt.Color(255, 255, 255));
     voltarButton.setText("VOLTAR");
+    voltarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        voltarButtonActionPerformed(evt);
+      }
+    });
 
     nomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     nomeLabel.setText("NOME");
@@ -172,6 +178,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+    new EscolherGerenciamento().setVisible(true);
+    this.dispose();
+  }//GEN-LAST:event_voltarButtonActionPerformed
 
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
