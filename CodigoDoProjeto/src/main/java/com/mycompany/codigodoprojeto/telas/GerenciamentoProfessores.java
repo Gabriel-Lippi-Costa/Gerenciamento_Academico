@@ -70,6 +70,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
     adicionarButton.setText("ADICIONAR");
+    adicionarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        adicionarButtonActionPerformed(evt);
+      }
+    });
 
     removerButton.setBackground(new java.awt.Color(0, 0, 0));
     removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -89,7 +94,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         {null, null, null, null, null}
       },
       new String [] {
-        "CODIGO", "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
+        "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
       }
     ));
     jScrollPane1.setViewportView(professorTable);
@@ -193,6 +198,27 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     this.dispose();
   }//GEN-LAST:event_voltarButtonActionPerformed
 
+  private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
+    try {
+      
+      String nome = nomeTextField.getText();
+      String ensina = ensinaTextField.getText();
+      String email = emailTextField.getText();
+      String senha = senhaTextField.getText();
+      String cpf = cpfTextField.getText();
+      
+      Professor professor = new Professor(nome, ensina, email, senha, cpf);
+      
+      DAO dao = new DAO();
+      
+      
+      
+    } catch(Exception e) {
+      JOptionPane.showMessageDialog(null, "Erro ao adicionar um professor!");
+      e.printStackTrace();
+    }
+  }//GEN-LAST:event_adicionarButtonActionPerformed
+
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
     /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -239,6 +265,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, "Erro ao carregar os professores!");
+      e.printStackTrace();
     }
   }
 
