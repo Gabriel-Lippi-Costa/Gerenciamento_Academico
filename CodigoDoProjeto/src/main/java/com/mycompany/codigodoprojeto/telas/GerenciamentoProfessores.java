@@ -94,7 +94,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         {null, null, null, null, null}
       },
       new String [] {
-        "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
+        "CODIGO", "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
       }
     ));
     jScrollPane1.setViewportView(professorTable);
@@ -211,7 +211,22 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       
       DAO dao = new DAO();
       
-      
+      if (dao.criarProfessor(professor)) {
+        JOptionPane.showMessageDialog(null, "Professor criado com sucesso!");
+        
+        DefaultTableModel model = (DefaultTableModel) professorTable.getModel();
+        
+        model.addRow(new Object[] {
+          professor.getNome(),
+          professor.getEnsina(),
+          professor.getEmail(),
+          professor.getSenha(),
+          professor.getCpf()
+        });
+        carregarProfessor();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao criar um professor!");
+      }
       
     } catch(Exception e) {
       JOptionPane.showMessageDialog(null, "Erro ao adicionar um professor!");

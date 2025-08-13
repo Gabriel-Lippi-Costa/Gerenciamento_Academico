@@ -148,7 +148,7 @@ public class DAO {
   
 
   public boolean criarProfessor(Professor professor) throws Exception {
-    String sql = "ÏNSERT INTO tb_professor(nomeProfessor, ensinaCursoProfessor, emailProfessor, senhaProfessor, cpfProfessor) VALUES (?, ?, ?, ?, ?)";
+    String sql = "INSERT INTO tb_professor(nomeProfessor, ensinaCursoProfessor, emailProfessor, senhaProfessor, cpfProfessor) VALUES (?, ?, ?, ?, ?)";
 
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setString(1, professor.getNome());
