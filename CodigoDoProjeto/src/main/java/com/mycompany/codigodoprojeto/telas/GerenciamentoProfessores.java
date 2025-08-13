@@ -1,5 +1,10 @@
 package com.mycompany.codigodoprojeto.telas;
 
+import com.mycompany.codigodoprojeto.modelos.Professor;
+import com.mycompany.codigodoprojeto.persistencia.DAO;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 public class GerenciamentoProfessores extends javax.swing.JFrame {
   
   private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GerenciamentoProfessores.class.getName());
@@ -7,6 +12,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
   public GerenciamentoProfessores() {
     initComponents();
     setLocationRelativeTo(null);
+    
   }
 
   @SuppressWarnings("unchecked")
@@ -202,6 +208,34 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     //</editor-fold>
 
     java.awt.EventQueue.invokeLater(() -> new GerenciamentoProfessores().setVisible(true));
+  }
+  
+  private void carregarProfessor() {
+    try {
+      DAO dao = new DAO();
+      
+      java.util.List <Professor> lista = dao.listarProfessor();
+      
+      DefaultTableModel model = (DefaultTableModel) professorTable.getModel();
+      model.setRowCount(0);
+      
+      for (Professor professor : lista) {
+        model.addRow(new Object[] {
+          professor.getNome(),
+          professor.getEnsina(),
+          professor.getEmail(),
+          professor.getSenha(),
+          professor.getCpf()
+        });
+      }
+      
+      professorTable.getColumnModel().getColumn(0).setMinWidth(0);
+      professorTable.getColumnModel().getColumn(0).setMaxWidth(0);
+      professorTable.getColumnModel().getColumn(0).setWidth(0);
+      
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(null, "Erro ao carregar os professores!");
+    }
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
