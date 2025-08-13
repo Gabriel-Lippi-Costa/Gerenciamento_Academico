@@ -174,7 +174,7 @@ public class DAO {
         Professor professor = new Professor(
            rs.getInt("codigoProfessor"),
            rs.getString("nomeProfessor"),
-           rs.getString("ensinaProfessor"),
+           rs.getString("ensinaCursoProfessor"),
            rs.getString("emailProfessor"),
            rs.getString("senhaProfessor"),
            rs.getString("cpfProfessor")

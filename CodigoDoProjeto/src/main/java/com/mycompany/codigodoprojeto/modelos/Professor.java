@@ -29,6 +29,10 @@ public class Professor {
     this.senha = senha;
     this.cpf = cpf;
   }
+  
+  public int getCodigo() {
+    return codigo;
+  }
 
   public String getNome() {
     return nome;
