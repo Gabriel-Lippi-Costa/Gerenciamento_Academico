@@ -11,6 +11,17 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
 
   public GerenciamentoProfessores() {
     initComponents();
+    professorTable.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null, null},
+        {null, null, null, null, null},
+        {null, null, null, null, null},
+        {null, null, null, null, null}
+      },
+      new String [] {
+        "CODIGO", "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
+      }
+    ));
     setLocationRelativeTo(null);
     carregarProfessor();
   }
@@ -90,6 +101,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
     atualizarButton.setText("ATUALIZAR");
+    atualizarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        atualizarButtonActionPerformed(evt);
+      }
+    });
 
     professorTable.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -99,7 +115,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         {null, null, null, null, null}
       },
       new String [] {
-        "CODIGO", "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
+        "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
       }
     ));
     jScrollPane1.setViewportView(professorTable);
@@ -264,6 +280,10 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
   }//GEN-LAST:event_removerButtonActionPerformed
+
+  private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_atualizarButtonActionPerformed
 
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
