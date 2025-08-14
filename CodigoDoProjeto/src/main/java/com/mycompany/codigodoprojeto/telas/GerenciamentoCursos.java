@@ -15,31 +15,31 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
   private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
-    jButton1 = new javax.swing.JButton();
-    jLabel1 = new javax.swing.JLabel();
-    jLabel2 = new javax.swing.JLabel();
-    jTextField1 = new javax.swing.JTextField();
-    jTextField2 = new javax.swing.JTextField();
+    voltarButton = new javax.swing.JButton();
+    nomeLabel = new javax.swing.JLabel();
+    tipoLabel = new javax.swing.JLabel();
+    tipoTextField = new javax.swing.JTextField();
+    nomeTextField = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     jTable1 = new javax.swing.JTable();
-    jButton2 = new javax.swing.JButton();
-    jButton3 = new javax.swing.JButton();
-    jButton4 = new javax.swing.JButton();
+    adicionarButton = new javax.swing.JButton();
+    removerButton = new javax.swing.JButton();
+    atualizarButton = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-    jButton1.setBackground(new java.awt.Color(255, 0, 0));
-    jButton1.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
-    jButton1.setForeground(new java.awt.Color(255, 255, 255));
-    jButton1.setText("VOLTAR");
+    voltarButton.setBackground(new java.awt.Color(255, 0, 0));
+    voltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+    voltarButton.setForeground(new java.awt.Color(255, 255, 255));
+    voltarButton.setText("VOLTAR");
 
-    jLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel1.setText("NOME");
+    nomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    nomeLabel.setText("NOME");
 
-    jLabel2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-    jLabel2.setText("TIPO");
+    tipoLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    tipoLabel.setText("TIPO");
 
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -54,11 +54,20 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     ));
     jScrollPane1.setViewportView(jTable1);
 
-    jButton2.setText("ADICIONAR");
+    adicionarButton.setBackground(new java.awt.Color(0, 0, 0));
+    adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
+    adicionarButton.setText("ADICIONAR");
 
-    jButton3.setText("REMOVER");
+    removerButton.setBackground(new java.awt.Color(0, 0, 0));
+    removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    removerButton.setForeground(new java.awt.Color(255, 255, 255));
+    removerButton.setText("REMOVER");
 
-    jButton4.setText("ATUALIZAR");
+    atualizarButton.setBackground(new java.awt.Color(0, 0, 0));
+    atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+    atualizarButton.setText("ATUALIZAR");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -68,7 +77,7 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(123, 123, 123)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -76,40 +85,41 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(nomeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jButton3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4))
-                  .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel2)
+                    .addComponent(tipoLabel)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addComponent(tipoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(74, 74, 74))
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(removerButton)
+                    .addGap(149, 149, 149)
+                    .addComponent(atualizarButton))))))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(77, 77, 77)
-            .addComponent(jButton2)))
-        .addContainerGap(166, Short.MAX_VALUE))
+            .addComponent(adicionarButton)))
+        .addContainerGap(84, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(47, 47, 47)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel1)
-          .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel2)
-          .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+          .addComponent(nomeLabel)
+          .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(tipoLabel)
+          .addComponent(tipoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jButton2)
-          .addComponent(jButton3)
-          .addComponent(jButton4))
+          .addComponent(adicionarButton)
+          .addComponent(removerButton)
+          .addComponent(atualizarButton))
         .addGap(30, 30, 30)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(14, 14, 14))
@@ -135,16 +145,16 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
-  private javax.swing.JButton jButton2;
-  private javax.swing.JButton jButton3;
-  private javax.swing.JButton jButton4;
-  private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel2;
+  private javax.swing.JButton adicionarButton;
+  private javax.swing.JButton atualizarButton;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable jTable1;
-  private javax.swing.JTextField jTextField1;
-  private javax.swing.JTextField jTextField2;
+  private javax.swing.JLabel nomeLabel;
+  private javax.swing.JTextField nomeTextField;
+  private javax.swing.JButton removerButton;
+  private javax.swing.JLabel tipoLabel;
+  private javax.swing.JTextField tipoTextField;
+  private javax.swing.JButton voltarButton;
   // End of variables declaration//GEN-END:variables
 }
