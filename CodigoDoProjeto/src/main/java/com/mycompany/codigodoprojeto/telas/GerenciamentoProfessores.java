@@ -80,6 +80,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
     removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     removerButton.setForeground(new java.awt.Color(255, 255, 255));
     removerButton.setText("REMOVER");
+    removerButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removerButtonActionPerformed(evt);
+      }
+    });
 
     atualizarButton.setBackground(new java.awt.Color(0, 0, 0));
     atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -233,6 +238,32 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       e.printStackTrace();
     }
   }//GEN-LAST:event_adicionarButtonActionPerformed
+
+  private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerButtonActionPerformed
+    int linhaSelecionada = professorTable.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+      JOptionPane.showMessageDialog(null, "Selecione um aluno para remover!");
+      return;
+    }
+    
+    int codigo = Integer.parseInt(professorTable.getValueAt(linhaSelecionada, 0).toString());
+    
+    int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover esse professor? ", "Confirmação", JOptionPane.YES_NO_OPTION);
+    
+    try {
+      DAO dao = new DAO();
+      if (dao.removerProfessor(codigo)) {
+        carregarProfessor();
+        JOptionPane.showMessageDialog(null, "Professor removido com sucesso!");
+      } else {
+        JOptionPane.showMessageDialog(null, "Professor não removido");
+      }
+    } catch(Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
+    }
+  }//GEN-LAST:event_removerButtonActionPerformed
 
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

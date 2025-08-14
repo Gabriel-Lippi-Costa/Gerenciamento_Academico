@@ -185,5 +185,18 @@ public class DAO {
     return lista;
 
   }
+  
+  public boolean removerProfessor(int codigo) throws Exception {
+    String sql = "DELETE FROM tb_professor WHERE codigoProfessor = ?";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setInt(1, codigo);
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    } catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 
 }
