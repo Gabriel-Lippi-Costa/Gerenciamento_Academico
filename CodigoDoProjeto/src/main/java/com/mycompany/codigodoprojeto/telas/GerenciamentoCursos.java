@@ -1,5 +1,11 @@
 package com.mycompany.codigodoprojeto.telas;
 
+import com.mycompany.codigodoprojeto.modelos.Curso;
+import com.mycompany.codigodoprojeto.persistencia.DAO;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 public class GerenciamentoCursos extends javax.swing.JFrame {
   
   private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GerenciamentoCursos.class.getName());
@@ -8,6 +14,15 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     super("Gerenciamento Acâdemico");
     initComponents();
     setLocationRelativeTo(null);
+    carregarCursos();
+    cursoTable.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+
+      },
+      new String [] {
+        "CODIGO", "NOME", "TIPO"
+      }
+    ));
   }
 
   @SuppressWarnings("unchecked")
@@ -21,7 +36,7 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     tipoTextField = new javax.swing.JTextField();
     nomeTextField = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTable1 = new javax.swing.JTable();
+    cursoTable = new javax.swing.JTable();
     adicionarButton = new javax.swing.JButton();
     removerButton = new javax.swing.JButton();
     atualizarButton = new javax.swing.JButton();
@@ -41,18 +56,15 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     tipoLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     tipoLabel.setText("TIPO");
 
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    cursoTable.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null},
-        {null, null},
-        {null, null},
-        {null, null}
+
       },
       new String [] {
         "NOME", "TIPO"
       }
     ));
-    jScrollPane1.setViewportView(jTable1);
+    jScrollPane1.setViewportView(cursoTable);
 
     adicionarButton.setBackground(new java.awt.Color(0, 0, 0));
     adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -80,28 +92,26 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
             .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(123, 123, 123)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addComponent(nomeLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(29, 29, 29)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(nomeLabel)
+                .addComponent(tipoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(tipoLabel)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tipoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(74, 74, 74))
-                  .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(removerButton)
-                    .addGap(149, 149, 149)
-                    .addComponent(atualizarButton))))))
+                .addComponent(tipoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(removerButton)
+                .addGap(149, 149, 149)
+                .addComponent(atualizarButton))))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(77, 77, 77)
-            .addComponent(adicionarButton)))
+            .addComponent(adicionarButton))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(166, 166, 166)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap(84, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
@@ -120,9 +130,9 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
           .addComponent(adicionarButton)
           .addComponent(removerButton)
           .addComponent(atualizarButton))
-        .addGap(30, 30, 30)
+        .addGap(29, 29, 29)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(14, 14, 14))
+        .addGap(15, 15, 15))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,13 +153,42 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     
     java.awt.EventQueue.invokeLater(() -> new GerenciamentoCursos().setVisible(true));
   }
+  
+  public void carregarCursos() {
+    try {
+      DAO dao = new DAO();
+      
+      java.util.List<Curso> lista = dao.listarCurso();
+      
+      DefaultTableModel model = (DefaultTableModel) cursoTable.getModel();
+      
+      model.setRowCount(0);
+      
+      for (Curso curso : lista) {
+        model.addRow(new Object[] {
+          curso.getCodigo(),
+          curso.getNome(),
+          curso.getTipo()
+        });
+      }
+      
+      cursoTable.getColumnModel().getColumn(0).setMinWidth(0);
+      cursoTable.getColumnModel().getColumn(0).setMaxWidth(0);
+      cursoTable.getColumnModel().getColumn(0).setWidth(0);
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Tente novamente mais tarde!");
+              
+    }
+  }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton adicionarButton;
   private javax.swing.JButton atualizarButton;
+  private javax.swing.JTable cursoTable;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTable1;
   private javax.swing.JLabel nomeLabel;
   private javax.swing.JTextField nomeTextField;
   private javax.swing.JButton removerButton;
