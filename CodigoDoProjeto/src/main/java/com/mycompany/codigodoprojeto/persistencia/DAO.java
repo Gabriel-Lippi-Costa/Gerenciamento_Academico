@@ -198,5 +198,23 @@ public class DAO {
       return false;
     }
   }
+  
+  public boolean atualizarProfessor(Professor professor) throws Exception {
+    String sql = "UPDATE tb_professor SET nomeProfessor = ?, ensinaCursoProfessor = ?, emailProfessor = ?, senhaProfessor = ?, cpfProfessor = ? WHERE codigoProfessor = ?";
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setString(1, professor.getNome());
+      ps.setString(2, professor.getEnsina());
+      ps.setString(3, professor.getEmail());
+      ps.setString(4, professor.getSenha());
+      ps.setString(5, professor.getCpf());
+      ps.setInt(6, professor.getCodigo());
+      
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 
 }

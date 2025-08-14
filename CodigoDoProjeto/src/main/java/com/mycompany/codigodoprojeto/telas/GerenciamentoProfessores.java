@@ -118,6 +118,11 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
         "NOME", "ENSINA", "EMAIL", "SENHA", "CPF"
       }
     ));
+    professorTable.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        professorTableMouseClicked(evt);
+      }
+    });
     jScrollPane1.setViewportView(professorTable);
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -282,9 +287,49 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
   }//GEN-LAST:event_removerButtonActionPerformed
 
   private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
-    // TODO add your handling code here:
+    int linhaSelecionada = professorTable.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+      JOptionPane.showMessageDialog(null, "Selecione um professor para editar!");
+      return;
+    }
+    
+    try {
+      int codigo = Integer.parseInt(professorTable.getValueAt(linhaSelecionada, 0).toString());
+      
+      String nome = nomeTextField.getText();
+      String ensina = ensinaTextField.getText();
+      String email = emailTextField.getText();
+      String senha = senhaTextField.getText();
+      String cpf = cpfTextField.getText();
+      
+      Professor professor = new Professor(codigo, nome, ensina, email, senha, cpf);
+      
+      DAO dao = new DAO();
+      
+      if (dao.atualizarProfessor(professor)) {
+        JOptionPane.showMessageDialog(null, "Professor atualizado com sucesso!");
+        carregarProfessor();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar um professor!");
+      }
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro ao atualizar um professor!");
+    }
   }//GEN-LAST:event_atualizarButtonActionPerformed
 
+  private void professorTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_professorTableMouseClicked
+    int linhaSelecionada = professorTable.getSelectedRow();
+    
+    nomeTextField.setText(professorTable.getValueAt(linhaSelecionada, 1).toString());
+    ensinaTextField.setText(professorTable.getValueAt(linhaSelecionada, 2).toString());
+    emailTextField.setText(professorTable.getValueAt(linhaSelecionada, 3).toString());
+    senhaTextField.setText(professorTable.getValueAt(linhaSelecionada, 4).toString());
+    cpfTextField.setText(professorTable.getValueAt(linhaSelecionada, 5).toString());
+  }//GEN-LAST:event_professorTableMouseClicked
+  
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
     /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
