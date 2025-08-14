@@ -1,7 +1,7 @@
-
 package com.mycompany.codigodoprojeto.persistencia;
 
 import com.mycompany.codigodoprojeto.modelos.Aluno;
+import com.mycompany.codigodoprojeto.modelos.Curso;
 import com.mycompany.codigodoprojeto.modelos.Professor;
 import com.mycompany.codigodoprojeto.modelos.UsuarioCriarConta;
 import com.mycompany.codigodoprojeto.modelos.UsuarioEsqueceuSenha;
@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class DAO {
 
@@ -27,31 +26,31 @@ public class DAO {
       }
     }
   }
-  
+
   public List<Aluno> listarAlunos() throws Exception {
     List<Aluno> lista = new ArrayList<>();
-    
+
     String sql = "SELECT * FROM tb_aluno";
-    
-    try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
-     while (rs.next()) {
-       Aluno aluno = new Aluno(
-         rs.getInt("codigoAluno"),
-         rs.getString("nomeAluno"),
-         rs.getString("cursoAluno"),
-         rs.getString("inicioCursoAluno"),
-         rs.getString("fimCursoAluno"),
-         rs.getString("emailAluno"),
-         rs.getString("senhaAluno"),
-         rs.getString("salaAluno"),
-         rs.getString("cpfAluno")
-       );
-       lista.add(aluno);
-     } 
+
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+      while (rs.next()) {
+        Aluno aluno = new Aluno(
+                rs.getInt("codigoAluno"),
+                rs.getString("nomeAluno"),
+                rs.getString("cursoAluno"),
+                rs.getString("inicioCursoAluno"),
+                rs.getString("fimCursoAluno"),
+                rs.getString("emailAluno"),
+                rs.getString("senhaAluno"),
+                rs.getString("salaAluno"),
+                rs.getString("cpfAluno")
+        );
+        lista.add(aluno);
+      }
     }
-    
+
     return lista;
-    
+
   }
 
   public boolean criarContaUsuario(UsuarioCriarConta usuarioCriarConta) throws Exception {
@@ -103,28 +102,28 @@ public class DAO {
 
   }
 
-  public boolean removerAluno(int codigo) throws Exception{
+  public boolean removerAluno(int codigo) throws Exception {
 
     String sql = "DELETE FROM tb_aluno WHERE codigoAluno = ?";
 
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-      
+
       ps.setInt(1, codigo);
 
-        int linhasAfetadas = ps.executeUpdate();
+      int linhasAfetadas = ps.executeUpdate();
 
-        return linhasAfetadas > 0;
+      return linhasAfetadas > 0;
 
-      } catch(Exception e) {
-        e.printStackTrace();
-        return false;
-      }
-
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
     }
+
+  }
 
   public boolean atualizarAluno(Aluno aluno) throws Exception {
     String sql = "UPDATE tb_aluno SET nomeAluno = ?, cursoAluno = ?, inicioCursoAluno = ?, fimCursoAluno = ?, emailAluno = ?, senhaAluno = ?, salaAluno = ?, cpfAluno = ? WHERE codigoAluno = ?";
-    
+
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setString(1, aluno.getNome());
       ps.setString(2, aluno.getCurso());
@@ -135,17 +134,15 @@ public class DAO {
       ps.setString(7, aluno.getSala());
       ps.setString(8, aluno.getCpf());
       ps.setInt(9, aluno.getCodigo());
-      
+
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
-    } catch(Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
       return false;
     }
-    
+
   }
-  
-  
 
   public boolean criarProfessor(Professor professor) throws Exception {
     String sql = "INSERT INTO tb_professor(nomeProfessor, ensinaCursoProfessor, emailProfessor, senhaProfessor, cpfProfessor) VALUES (?, ?, ?, ?, ?)";
@@ -163,21 +160,21 @@ public class DAO {
     }
 
   }
-  
+
   public List<Professor> listarProfessor() throws Exception {
     List<Professor> lista = new ArrayList<>();
-    
+
     String sql = "SELECT * FROM tb_professor";
 
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
-      while(rs.next()) {
+      while (rs.next()) {
         Professor professor = new Professor(
-           rs.getInt("codigoProfessor"),
-           rs.getString("nomeProfessor"),
-           rs.getString("ensinaCursoProfessor"),
-           rs.getString("emailProfessor"),
-           rs.getString("senhaProfessor"),
-           rs.getString("cpfProfessor")
+                rs.getInt("codigoProfessor"),
+                rs.getString("nomeProfessor"),
+                rs.getString("ensinaCursoProfessor"),
+                rs.getString("emailProfessor"),
+                rs.getString("senhaProfessor"),
+                rs.getString("cpfProfessor")
         );
         lista.add(professor);
       }
@@ -185,20 +182,20 @@ public class DAO {
     return lista;
 
   }
-  
+
   public boolean removerProfessor(int codigo) throws Exception {
     String sql = "DELETE FROM tb_professor WHERE codigoProfessor = ?";
-    
+
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setInt(1, codigo);
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
-    } catch(Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
       return false;
     }
   }
-  
+
   public boolean atualizarProfessor(Professor professor) throws Exception {
     String sql = "UPDATE tb_professor SET nomeProfessor = ?, ensinaCursoProfessor = ?, emailProfessor = ?, senhaProfessor = ?, cpfProfessor = ? WHERE codigoProfessor = ?";
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -208,7 +205,7 @@ public class DAO {
       ps.setString(4, professor.getSenha());
       ps.setString(5, professor.getCpf());
       ps.setInt(6, professor.getCodigo());
-      
+
       int linhasAfetadas = ps.executeUpdate();
       return linhasAfetadas > 0;
     } catch (Exception e) {
@@ -217,4 +214,21 @@ public class DAO {
     }
   }
 
+  public List<Curso> listarCurso() throws Exception {
+    List<Curso> lista = new ArrayList<>();
+
+    String sql = "SELECT * FROM tb_curso";
+
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+      while (rs.next()) {
+        Curso curso = new Curso(
+                rs.getInt("codigoCurso"),
+                rs.getString("nomeCurso"),
+                rs.getString("tipoCurso")
+        );
+        lista.add(curso);
+      }
+    }
+    return lista;
+  }
 }
