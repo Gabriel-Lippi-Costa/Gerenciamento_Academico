@@ -87,6 +87,11 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
     atualizarButton.setText("ATUALIZAR");
+    atualizarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        atualizarButtonActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -212,6 +217,34 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     }
     
   }//GEN-LAST:event_removerButtonActionPerformed
+
+  private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
+    int linhaSelecionada = cursoTable.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+      JOptionPane.showMessageDialog(null, "Selecione um curso para atualizar!");
+    }
+    
+    try {
+      int codigo = Integer.parseInt(cursoTable.getValueAt(linhaSelecionada, 0).toString());
+      
+      String nome = nomeTextField.getText();
+      String tipo = tipoTextField.getText();
+      
+      Curso curso = new Curso(codigo, nome, tipo);
+      DAO dao = new DAO();
+      
+      if (dao.atualizarCurso(curso)) {
+        JOptionPane.showMessageDialog(null, "Curso atualizado com sucesso!");
+        carregarCursos();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar um aluno!");
+      }
+    } catch(Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
+    }
+  }//GEN-LAST:event_atualizarButtonActionPerformed
 
   public static void main(String args[]) {
     

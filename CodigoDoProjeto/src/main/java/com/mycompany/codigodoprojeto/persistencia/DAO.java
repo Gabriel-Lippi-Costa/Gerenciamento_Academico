@@ -257,4 +257,22 @@ public class DAO {
       return false;
     }
   }
+  
+  public boolean atualizarCurso(Curso curso) throws Exception {
+    String sql = "UPDATE tb_cursos SET nomeCurso = ?, tipoCurso = ? WHERE codigoCurso = ?";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setInt(1, curso.getCodigo());
+      ps.setString(2, curso.getNome());
+      ps.setString(3, curso.getTipo());
+      
+      int linhasAfetadas = ps.executeUpdate();
+      
+      return linhasAfetadas > 0;
+    } catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    
+  }
 }
