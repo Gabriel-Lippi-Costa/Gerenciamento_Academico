@@ -255,7 +255,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       }
       
     } catch(Exception e) {
-      JOptionPane.showMessageDialog(null, "Erro ao adicionar um professor!");
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
       e.printStackTrace();
     }
   }//GEN-LAST:event_adicionarButtonActionPerformed
@@ -316,7 +316,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       
     } catch (Exception e) {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "Erro ao atualizar um professor!");
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
   }//GEN-LAST:event_atualizarButtonActionPerformed
 
@@ -375,7 +375,7 @@ public class GerenciamentoProfessores extends javax.swing.JFrame {
       professorTable.getColumnModel().getColumn(0).setWidth(0);
       
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, "Erro ao carregar os professores!");
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
       e.printStackTrace();
     }
   }

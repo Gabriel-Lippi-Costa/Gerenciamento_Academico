@@ -286,7 +286,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       }
 
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, "Erro!" + e.getMessage());
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
 
   }//GEN-LAST:event_adicionarButtonActionPerformed
@@ -316,7 +316,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       }
     } catch (Exception e) {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "Erro ao remover aluno: " + e.getMessage());
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
 
   }//GEN-LAST:event_removerButtonActionPerformed
@@ -354,7 +354,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
 
     } catch (Exception e) {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "Erro ao atualizar o aluno!");
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
 
   }//GEN-LAST:event_atualizarButtonActionPerformed
@@ -415,7 +415,7 @@ public class GerenciamentoAlunos extends javax.swing.JFrame {
       alunosTable.getColumnModel().getColumn(0).setWidth(0);
 
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, "Erro ao carregar os alunos!");
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
   }
 

@@ -53,9 +53,14 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
 
       },
       new String [] {
-        "NOME", "TIPO"
+        "CODIGO", "NOME", "TIPO"
       }
     ));
+    cursoTable.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        cursoTableMouseClicked(evt);
+      }
+    });
     jScrollPane1.setViewportView(cursoTable);
 
     adicionarButton.setBackground(new java.awt.Color(0, 0, 0));
@@ -72,6 +77,11 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     removerButton.setForeground(new java.awt.Color(255, 255, 255));
     removerButton.setText("REMOVER");
+    removerButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removerButtonActionPerformed(evt);
+      }
+    });
 
     atualizarButton.setBackground(new java.awt.Color(0, 0, 0));
     atualizarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -147,8 +157,61 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
-    
+    try {
+      String nome = nomeTextField.getText();
+      String tipo = tipoTextField.getText();
+      
+      Curso curso = new Curso(nome, tipo);
+      DAO dao = new DAO();
+      
+      if (dao.criarCurso(curso)) {
+        JOptionPane.showMessageDialog(null, "Curso criado com sucesso!");
+        
+        carregarCursos();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao criar um aluno!");
+      }
+              
+    } catch(Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
+    }
   }//GEN-LAST:event_adicionarButtonActionPerformed
+
+  private void cursoTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoTableMouseClicked
+    int linhaSelecionada = cursoTable.getSelectedRow();
+    
+    nomeTextField.setText(cursoTable.getValueAt(linhaSelecionada, 1).toString());
+    tipoTextField.setText(cursoTable.getValueAt(linhaSelecionada, 2).toString());
+  }//GEN-LAST:event_cursoTableMouseClicked
+
+  private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerButtonActionPerformed
+    int linhaSelecionada = cursoTable.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+      JOptionPane.showMessageDialog(null, "Selecione um curso para remover!");
+      return;
+    }
+    
+    int codigo = Integer.parseInt(cursoTable.getValueAt(linhaSelecionada, 0).toString());
+    
+    int confirmar = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover?", "Confirmar", JOptionPane.YES_NO_OPTION);
+    
+    try {
+      DAO dao = new DAO();
+      
+      if(dao.removerCurso(codigo)) {
+        JOptionPane.showMessageDialog(null, "Curso removido com sucesso!");
+        carregarCursos();
+      } else {
+        JOptionPane.showMessageDialog(null, "Erro ao remover o curso!");
+      }
+    } catch(Exception e) {
+      e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
+    }
+    
+  }//GEN-LAST:event_removerButtonActionPerformed
 
   public static void main(String args[]) {
     

@@ -243,4 +243,18 @@ public class DAO {
       return linhasAfetadas > 0;
     }
   }
+  
+  public boolean removerCurso(int codigo) throws Exception {
+    String sql = "DELETE FROM tb_cursos WHERE codigoCurso = ?";
+    
+    try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setInt(1, codigo);
+      
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 }
