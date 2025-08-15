@@ -217,7 +217,7 @@ public class DAO {
   public List<Curso> listarCurso() throws Exception {
     List<Curso> lista = new ArrayList<>();
 
-    String sql = "SELECT * FROM tb_curso";
+    String sql = "SELECT * FROM tb_cursos";
 
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
       while (rs.next()) {
@@ -230,5 +230,17 @@ public class DAO {
       }
     }
     return lista;
+  }
+  
+  public boolean criarCurso(Curso curso) throws Exception {
+    String sql = "INSERT INTO tb_cursos (nomeCurso, tipoCurso) VALUES (?, ?)";
+    
+    try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setString(1, curso.getNome());
+      ps.setString(2, curso.getTipo());
+      
+      int linhasAfetadas = ps.executeUpdate();
+      return linhasAfetadas > 0;
+    }
   }
 }

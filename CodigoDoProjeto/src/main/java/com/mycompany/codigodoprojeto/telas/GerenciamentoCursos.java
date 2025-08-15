@@ -15,14 +15,6 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     initComponents();
     setLocationRelativeTo(null);
     carregarCursos();
-    cursoTable.setModel(new javax.swing.table.DefaultTableModel(
-      new Object [][] {
-
-      },
-      new String [] {
-        "CODIGO", "NOME", "TIPO"
-      }
-    ));
   }
 
   @SuppressWarnings("unchecked")
@@ -70,6 +62,11 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     adicionarButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
     adicionarButton.setText("ADICIONAR");
+    adicionarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        adicionarButtonActionPerformed(evt);
+      }
+    });
 
     removerButton.setBackground(new java.awt.Color(0, 0, 0));
     removerButton.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -148,6 +145,10 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
+    
+  }//GEN-LAST:event_adicionarButtonActionPerformed
 
   public static void main(String args[]) {
     
