@@ -262,9 +262,9 @@ public class DAO {
     String sql = "UPDATE tb_cursos SET nomeCurso = ?, tipoCurso = ? WHERE codigoCurso = ?";
     
     try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setInt(1, curso.getCodigo());
-      ps.setString(2, curso.getNome());
-      ps.setString(3, curso.getTipo());
+      ps.setString(1, curso.getNome());
+      ps.setString(2, curso.getTipo());
+      ps.setInt(3, curso.getCodigo());
       
       int linhasAfetadas = ps.executeUpdate();
       

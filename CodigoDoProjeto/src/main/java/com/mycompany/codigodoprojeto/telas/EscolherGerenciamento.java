@@ -42,11 +42,21 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
     professorButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
     professorButton.setForeground(new java.awt.Color(255, 255, 255));
     professorButton.setText("VER PROFESSORES");
+    professorButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        professorButtonActionPerformed(evt);
+      }
+    });
 
     cursoButton.setBackground(new java.awt.Color(255, 0, 0));
     cursoButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
     cursoButton.setForeground(new java.awt.Color(255, 255, 255));
     cursoButton.setText("VER CURSOS");
+    cursoButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cursoButtonActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -97,6 +107,16 @@ public class EscolherGerenciamento extends javax.swing.JFrame {
     new GerenciamentoAlunos().setVisible(true);
     this.dispose();
   }//GEN-LAST:event_alunoButtonActionPerformed
+
+  private void professorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professorButtonActionPerformed
+    new GerenciamentoProfessores().setVisible(true);
+    this.dispose();
+  }//GEN-LAST:event_professorButtonActionPerformed
+
+  private void cursoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cursoButtonActionPerformed
+    new GerenciamentoCursos().setVisible(true);
+    this.dispose();
+  }//GEN-LAST:event_cursoButtonActionPerformed
 
   public static void main(String args[]) {
 

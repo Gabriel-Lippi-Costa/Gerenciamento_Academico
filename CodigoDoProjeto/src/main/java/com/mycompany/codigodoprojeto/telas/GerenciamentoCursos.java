@@ -41,6 +41,11 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
     voltarButton.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
     voltarButton.setForeground(new java.awt.Color(255, 255, 255));
     voltarButton.setText("VOLTAR");
+    voltarButton.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        voltarButtonActionPerformed(evt);
+      }
+    });
 
     nomeLabel.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
     nomeLabel.setText("NOME");
@@ -238,13 +243,18 @@ public class GerenciamentoCursos extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Curso atualizado com sucesso!");
         carregarCursos();
       } else {
-        JOptionPane.showMessageDialog(null, "Erro ao atualizar um aluno!");
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar um curso!");
       }
     } catch(Exception e) {
       e.printStackTrace();
       JOptionPane.showMessageDialog(null, "Erro, tente novamente mais tarde!");
     }
   }//GEN-LAST:event_atualizarButtonActionPerformed
+
+  private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+    new EscolherGerenciamento().setVisible(true);
+    this.dispose();
+  }//GEN-LAST:event_voltarButtonActionPerformed
 
   public static void main(String args[]) {
     
